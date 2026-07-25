@@ -1,0 +1,9 @@
+#!/bin/sh
+# Stub: qemu's configure hard-fails if the pkg-config binary is absent, but
+# unicorn uses its bundled glib_compat and needs no system packages. Reporting
+# "not found" for every query is the same answer configure gets on a machine
+# with pkg-config installed but the libraries missing.
+case "$1" in
+  --version) echo "0.29.2"; exit 0 ;;
+esac
+exit 1

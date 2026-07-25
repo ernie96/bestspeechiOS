@@ -1,0 +1,10 @@
+# build outputs
+c/build-android/
+android/build/
+third_party/unicorn/
+
+# debug signing key, generated on first APK build
+android/debug.keystore
+
+# proprietary, cannot be redistributed -- users import their own copy
+B32_TTS.DLL

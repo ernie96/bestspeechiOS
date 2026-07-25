@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Declares which locales this engine can speak. BestSpeech is a US-English
+     formant synthesizer from 1995; there are no other language packs. -->
+<!-- android:settingsActivity is what puts the gear icon beside this engine in
+     Settings -> Text-to-speech output. -->
+<tts-engine xmlns:android="http://schemas.android.com/apk/res/android"
+    android:settingsActivity="com.bestspeech.tts.B32SettingsActivity">
+    <language android:name="eng" android:country="USA" />
+</tts-engine>

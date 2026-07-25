@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bestspeech.tts"
+    android:versionCode="1"
+    android:versionName="0.1">
+
+    <application
+        android:label="BestSpeech"
+        android:allowBackup="false">
+
+        <service
+            android:name=".B32TtsService"
+            android:label="BestSpeech"
+            android:exported="true"
+            android:directBootAware="false">
+            <intent-filter>
+                <action android:name="android.intent.action.TTS_SERVICE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="android.speech.tts"
+                android:resource="@xml/tts_engine" />
+        </service>
+
+        <!-- The gear beside this engine in Settings -> Text-to-speech output.
+             Wired up by android:settingsActivity in res/xml/tts_engine.xml. -->
+        <activity
+            android:name=".B32SettingsActivity"
+            android:label="BestSpeech"
+            android:exported="true" />
+
+        <!-- The system launches this to check installed voice data. There is
+             exactly one voice set and it lives in the DLL the user supplies, so
+             this only reports whether that file has been imported yet. -->
+        <activity
+            android:name=".CheckVoiceDataActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.speech.tts.engine.CHECK_TTS_DATA" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

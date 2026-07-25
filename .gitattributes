@@ -1,0 +1,14 @@
+# Shell scripts and the configure shims must keep LF endings: a CRLF shebang
+# fails with "bad interpreter" on Linux, and these run under the NDK build and
+# on Android itself.
+*.sh                        text eol=lf
+third_party/shims/pkg-config text eol=lf
+third_party/shims/strings    text eol=lf
+
+# Normalise everything else, and never touch binaries.
+*                           text=auto
+*.apk                       binary
+*.dll                       binary
+*.so                        binary
+*.wav                       binary
+*.png                       binary

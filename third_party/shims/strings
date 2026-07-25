@@ -1,0 +1,4 @@
+#!/bin/sh
+# qemu's configure probes target endianness with `strings -a`; the NDK ships
+# llvm-strings, which is the same tool under a different name.
+exec "$NDK_LLVM_BIN/llvm-strings.exe" "$@"
