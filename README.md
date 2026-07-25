@@ -8,8 +8,8 @@ around 177x real time on a phone.
 No Windows API is executed natively. Every one of the DLL's imports is serviced by
 `c/b32emu.c`, which is what makes it portable to arm64 at all.
 
-Confirmed working on a Galaxy S23+ (Android 16, arm64-v8a) as the system TTS
-engine. Audio produced through Android's `TextToSpeech` API is **byte-identical**
+Ships for `arm64-v8a`, `armeabi-v7a`, `x86_64` and `x86`. Confirmed working on a
+Galaxy S23+ (Android 16, arm64-v8a) as the system TTS engine. Audio produced through Android's `TextToSpeech` API is **byte-identical**
 to the same engine running on desktop x86_64.
 
 Groundwork, the voice tables, and the `bstRelBuf` insight come from
@@ -24,7 +24,7 @@ MinHook.
 | `c/b32emu.{c,h}` | The engine: PE loader, 55 Win32/WinMM shims, trampolines |
 | `c/b32jni.c` | JNI bridge, streaming PCM to Java as it is produced |
 | `c/sonic/` | [sonic](https://github.com/waywardgeek/sonic) time-stretch (Apache 2.0, Bill Cox) |
-| `c/build-android.sh` | Builds libunicorn and `libb32tts.so` for an ABI |
+| `c/build-android.sh` | Builds libunicorn and `libb32tts.so` per ABI |
 | `android/src/.../B32Native.java` | Native bindings and the audio `Sink` |
 | `android/src/.../B32TtsService.java` | The `TextToSpeechService` |
 | `android/src/.../B32SettingsActivity.java` | Engine settings, including DLL import |
@@ -43,10 +43,20 @@ the Android command-line tools provide. Clone Unicorn first:
 
 ```
 git clone --depth 1 --branch 2.1.3 https://github.com/unicorn-engine/unicorn.git third_party/unicorn
-c/build-android.sh arm64-v8a      # libunicorn + libb32tts.so
-android/build-apk.sh arm64-v8a    # signed APK
+
+# One libunicorn + libb32tts.so per ABI, then one APK containing all of them.
+c/build-android.sh   arm64-v8a armeabi-v7a x86_64 x86
+android/build-apk.sh arm64-v8a armeabi-v7a x86_64 x86
 adb install -r android/build/bestspeech-debug.apk
 ```
+
+Either script takes a subset if you only need one ABI, but ship all four: Android
+reports an APK as "incompatible with your device" when it contains native code and
+none of it matches the device, so an arm64-only build simply refuses to install on
+32-bit ARM phones, Chromebooks, and x86 emulators.
+
+Libraries are linked with `-Wl,-z,max-page-size=16384`, since Android 15+ runs on
+devices with 16 KB memory pages where a 4 KB-aligned library will not load.
 
 Only the i386 guest target is compiled into libunicorn, which is all this needs
 and keeps it to roughly a quarter of the full library.
@@ -173,7 +183,6 @@ is used only for the speed multiplier past the engine's 2.75x ceiling.
   agreed byte-for-byte with a Python reference implementation and across
   architectures, but nothing here has been diffed against `b32tts_wrapper` running
   on real Windows.
-- **Only `arm64-v8a` is built.** `build-android.sh` accepts other ABIs, untested.
 - The Python reference harness and the parity, validation, and JNI-signature test
   suites were removed from this tree once the engine was working. They are worth
   restoring if the shims are ever modified.

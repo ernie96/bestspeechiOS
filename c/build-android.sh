@@ -76,11 +76,14 @@ for ABI in "${@:-arm64-v8a}"; do
     # Link order matters: uc.c pulls the softmmu target, which pulls common.
     UCLIBS="$UC_BUILD/libunicorn.a $UC_BUILD/libx86_64-softmmu.a $UC_BUILD/libunicorn-common.a"
     CFLAGS="--target=$TARGET -O2 -fPIC -Wall -Wextra -std=c11 -I$UC_SRC/include"
+    # 16 KB max page size: Android 15+ ships on devices with 16 KB pages, where a
+    # library aligned only to 4 KB fails to load.
+    LDFLAGS="-Wl,-z,max-page-size=16384"
 
     echo "--- libb32tts.so (JNI) ---"
     # shellcheck disable=SC2086
-    "$CLANG" $CFLAGS -shared "$here/b32emu.c" "$here/b32jni.c" "$here/sonic/sonic.c" \
-        $UCLIBS -lm -llog -o "$OUT/libb32tts.so"
+    "$CLANG" $CFLAGS $LDFLAGS -shared "$here/b32emu.c" "$here/b32jni.c" \
+        "$here/sonic/sonic.c" $UCLIBS -lm -llog -o "$OUT/libb32tts.so"
 
     ls -la "$OUT"
 done
