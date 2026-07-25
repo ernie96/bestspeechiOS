@@ -8,3 +8,6 @@ android/debug.keystore
 
 # proprietary, cannot be redistributed -- users import their own copy
 B32_TTS.DLL
+
+# staged release artifacts
+dist/
