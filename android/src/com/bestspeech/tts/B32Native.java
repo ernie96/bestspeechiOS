@@ -47,6 +47,49 @@ final class B32Native {
      */
     static native void setSpeed(long handle, float speed);
 
+    /** Baseline pitch as a percentage of the selected voice's own frequency. */
+    static native void setPitch(long handle, int percent);
+
+    /** Leave a voice-quality parameter at the selected voice's own value. */
+    static final int VOICE_DEFAULT = -32768;
+
+    /**
+     * The engine's remaining voice-quality parameters, any of which may be
+     * {@link #VOICE_DEFAULT}.
+     *
+     * @param inflection pitch range, -300..100; lower is more monotone
+     * @param headSize   vocal tract size, 0..6, in no particular order
+     * @param excitation 1 breathy, 2 whispery, 3 normal, up to 6
+     * @param unvoiced   gain of unvoiced sound, -70..20 dB
+     */
+    static native void setVoiceParams(long handle, int inflection, int headSize,
+                                      int excitation, int unvoiced);
+
+    // Text-parser options; mirror the B32_PARSE_* bits in b32emu.h.
+    static final int PARSE_LETTER_NAMES = 1 << 1;   // spell letters out
+    static final int PARSE_DIGITS       = 1 << 2;   // digits individually
+    static final int PARSE_PUNCTUATION  = 1 << 3;   // speak commas, periods
+    static final int PARSE_WHITESPACE   = 1 << 4;   // speak space, tab, return
+    static final int PARSE_FULL_NUMBERS = 1 << 6;   // no grouping of digits
+    static final int PARSE_UPPER_WORDS  = 1 << 7;   // capital groups as words
+    static final int PARSE_TIMES        = 1 << 9;   // 8:00 as "eight o'clock"
+    static final int PARSE_ABBREV       = 1 << 10;  // expand Dr., St., Mt.
+
+    /**
+     * @param parseFlags       {@code PARSE_*} bits; anything not set is turned off
+     * @param phrasePrediction look ahead for punctuation before committing to a
+     *                         phrase, which is what shapes the intonation
+     */
+    static native void setTextParams(long handle, int parseFlags,
+                                     boolean phrasePrediction);
+
+    /**
+     * Caps silence runs in the output, in milliseconds; 0 for either disables
+     * that cap. The engine pauses about 420 ms at a sentence and appends about
+     * 477 ms to the end of every utterance.
+     */
+    static native void setPauseCaps(long handle, int interiorMs, int tailMs);
+
     static native int voiceCount();
 
     static native String voiceName(int index);

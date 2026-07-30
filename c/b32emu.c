@@ -109,6 +109,21 @@ struct b32_emu {
     float        speed;
     int          rate;        /* emitted as a ~r code, see b32_set_rate */
 
+    /* Voice-quality overrides, B32_VOICE_DEFAULT to defer to the voice. */
+    int          inflection, head_size, excitation, unvoiced;
+    int          pitch_pct;
+    unsigned     parse_flags;
+    int          phrase_pred;
+
+    /* Silence trimming. Near-silent samples are withheld in `hold` until we
+     * know whether the run ends inside the utterance or at its end, since the
+     * two have different caps and a stream cannot see ahead. */
+    int          pause_cap_ms, tail_cap_ms;
+    int16_t     *hold;
+    size_t       hold_run;    /* length of the run so far, in samples */
+    size_t       hold_len;    /* how much of it was kept (see hold_add) */
+    size_t       hold_cap;    /* samples allocated */
+
     int   trace;
     char  err[256];
 };
@@ -212,8 +227,84 @@ static void push_audio(b32_emu *e, const int16_t *pcm, size_t bytes) {
     drain_sonic(e);
 }
 
-/* Called once the engine has finished, so the tail is not left in sonic. */
+/* ---- silence trimming, ahead of sonic so the caps are in engine time ----
+ *
+ * Anything this quiet counts as silence. The engine's pauses are digital zero
+ * bar a handful of stray samples under 200, and its trailing silence is exactly
+ * zero, so the threshold only has to clear that noise floor: -42 dBFS, far
+ * below anything audible as speech. */
+#define SILENCE_LEVEL 256
+/* Not const: sonic's write entry point takes a non-const short*. */
+static int16_t ZEROS[512];
+
+static int is_silent(int16_t s) {
+    return s > -SILENCE_LEVEL && s < SILENCE_LEVEL;
+}
+static size_t ms_samples(int ms) {
+    return ms <= 0 ? 0 : (size_t)ms * B32_SAMPLE_RATE / 1000;
+}
+
+/* Withhold silence: whether a run is an interior pause or the utterance's tail
+ * is only knowable once sound resumes or the engine stops. */
+static void hold_add(b32_emu *e, const int16_t *pcm, size_t n) {
+    e->hold_run += n;
+    /* Runs longer than this cannot be reproduced sample-exactly when trimming
+     * is off, and are padded with zeros instead -- which for this engine is
+     * what they contain. Its longest pause is under half a second. */
+    if (e->hold_len >= (size_t)B32_SAMPLE_RATE * 2) return;
+    if (e->hold_len + n > e->hold_cap) {
+        size_t cap = e->hold_cap ? e->hold_cap : 4096;
+        while (cap < e->hold_len + n) cap *= 2;
+        int16_t *grown = (int16_t *)realloc(e->hold, cap * sizeof *grown);
+        if (!grown) { e->abort = 1; return; }
+        e->hold = grown;
+        e->hold_cap = cap;
+    }
+    memcpy(e->hold + e->hold_len, pcm, n * sizeof *pcm);
+    e->hold_len += n;
+}
+
+/* Release a withheld run, keeping at most `keep` samples. They are taken from
+ * the start so the preceding sound's decay survives; the rest is silence
+ * either way. */
+static void hold_release(b32_emu *e, size_t keep) {
+    if (!e->hold_run) return;
+    if (keep > e->hold_run) keep = e->hold_run;
+    size_t have = keep < e->hold_len ? keep : e->hold_len;
+    if (have) push_audio(e, e->hold, have * sizeof *e->hold);
+    for (size_t left = keep - have; left && !e->abort; ) {
+        size_t n = left < sizeof ZEROS / sizeof ZEROS[0]
+                 ? left : sizeof ZEROS / sizeof ZEROS[0];
+        push_audio(e, ZEROS, n * sizeof ZEROS[0]);
+        left -= n;
+    }
+    e->hold_len = e->hold_run = 0;
+}
+
+/* Split a chunk into silence runs and sound, withholding the runs. */
+static void trim_audio(b32_emu *e, const int16_t *pcm, size_t bytes) {
+    if (!e->pause_cap_ms && !e->tail_cap_ms) { push_audio(e, pcm, bytes); return; }
+    size_t n = bytes / sizeof *pcm, i = 0;
+    while (i < n && !e->abort) {
+        size_t j = i;
+        if (is_silent(pcm[i])) {
+            while (j < n && is_silent(pcm[j])) j++;
+            hold_add(e, pcm + i, j - i);
+        } else {
+            while (j < n && !is_silent(pcm[j])) j++;
+            /* Sound again, so that run was an interior pause. */
+            hold_release(e, e->pause_cap_ms ? ms_samples(e->pause_cap_ms)
+                                            : e->hold_run);
+            push_audio(e, pcm + i, (j - i) * sizeof *pcm);
+        }
+        i = j;
+    }
+}
+
+/* Called once the engine has finished, so no tail is left withheld or in sonic. */
 static void flush_audio(b32_emu *e) {
+    /* Anything still withheld is the utterance's trailing silence. */
+    hold_release(e, e->tail_cap_ms ? ms_samples(e->tail_cap_ms) : e->hold_run);
     if (!e->sonic || e->speed == 1.0f) return;
     sonicFlushStream(e->sonic);
     drain_sonic(e);
@@ -542,7 +633,7 @@ static uint32_t w_waveOutWrite(b32_emu *e, const uint32_t *a) {
     }
     if (e->trace)
         fprintf(stderr, "  waveOutWrite: %u bytes\n", len);
-    push_audio(e, tmp, len);
+    trim_audio(e, tmp, len);
     free(tmp);
     return 0;
 }
@@ -623,21 +714,22 @@ static uint32_t api_addr_by_name(b32_emu *e, const char *name) {
 }
 
 /* ---------------------------------------------------------------- voices */
+/*                 name       ~v ~e  ~h  ~u  ~f  ~r  */
 static const b32_voice VOICES[] = {
-    { "Fred",    "~v0]~e3]~h0]~u0]~f80]~r0]",      80 },
-    { "Sara",    "~v2]~e3]~h-20]~u0]~f175]~r0]",  175 },
-    { "Hary",    "~v3]~e3]~h10]~u0]~f65]~r5]",     65 },
-    { "Wendy",   "~v2]~e1]~h50]~u0]~f150]~r-5]",  150 },
-    { "Dexter",  "~v6]~e6]~h0]~u-25]~f90]~r7]",    90 },
-    { "Alien",   "~v4]~e6]~h-50]~u-20]~f115]~r-20]", 115 },
-    { "Kit",     "~v5]~e3]~h40]~u0]~f230]~r-10]", 230 },
-    { "Bruno",   "~v3]~e3]~h50]~u0]~f60]~r8]",     60 },
-    { "Ghost",   "~v3]~e2]~h50]~u0]~f60]~r8]",     60 },
-    { "Peeper",  "~v2]~e2]~h0]~u5]~f80]~r0]",      80 },
-    { "Dracula", "~v3]~e3]~h45]~u-5]~f47]~r10]",   47 },
-    { "Granny",  "~v4]~e3]~h-60]~u0]~f350]~r20]", 350 },
-    { "Martha",  "~v6]~e4]~h100]~u-5]~f300]~r-10]", 300 },
-    { "Tim",     "~v3]~e4]~h-10]~u0]~f60]~r-10]",  60 },
+    { "Fred",              0, 3,   0,   0,  80,   0 },
+    { "Sara",              2, 3, -20,   0, 175,   0 },
+    { "Hary",              3, 3,  10,   0,  65,   5 },
+    { "Wendy",             2, 1,  50,   0, 150,  -5 },
+    { "Dexter",            6, 6,   0, -25,  90,   7 },
+    { "Alien",             4, 6, -50, -20, 115, -20 },
+    { "Kit",               5, 3,  40,   0, 230, -10 },
+    { "Bruno",             3, 3,  50,   0,  60,   8 },
+    { "Ghost",             3, 2,  50,   0,  60,   8 },
+    { "Peeper",            2, 2,   0,   5,  80,   0 },
+    { "Dracula",           3, 3,  45,  -5,  47,  10 },
+    { "Granny",            4, 3, -60,   0, 350,  20 },
+    { "Martha",            6, 4, 100,  -5, 300, -10 },
+    { "Tim",               3, 4, -10,   0,  60, -10 },
 };
 #define VOICE_N ((int)(sizeof VOICES / sizeof VOICES[0]))
 
@@ -977,6 +1069,12 @@ b32_emu *b32_open(const void *dll_bytes, size_t dll_len,
     e->wave_bits = B32_BITS;
     e->wave_ch = B32_CHANNELS;
     e->speed = 1.0f;
+    e->inflection = e->head_size = e->excitation = e->unvoiced = B32_VOICE_DEFAULT;
+    e->pitch_pct = 100;
+    e->phrase_pred = 1;
+    /* On by default: the engine appends about 477 ms of silence to every
+     * utterance, which a caller queueing the next one waits out for nothing. */
+    e->tail_cap_ms = 60;
 
     uc_err r = uc_open(UC_ARCH_X86, UC_MODE_32, &e->uc);
     if (r != UC_ERR_OK) { seterr(e, "uc_open: %s", uc_strerror(r)); goto fail; }
@@ -1064,6 +1162,7 @@ void b32_close(b32_emu *e) {
     if (e->sonic) sonicDestroyStream(e->sonic);
     free(e->img);
     free(e->audio);
+    free(e->hold);
     free(e->exports);
     free(e);
 }
@@ -1082,8 +1181,37 @@ void b32_set_rate(b32_emu *e, int rate) {
     if (e) e->rate = rate;
 }
 void b32_set_gain(b32_emu *e, int gain) {
+    /* Unlike rate, this parameter does keep working: measured byte-identical on
+     * the first and third utterance of one engine, and to the ~g text code. */
     uint32_t p[3] = { e->tts, BST_GAIN_SETTING, (uint32_t)gain };
     guest_call(e, e->ex.bstSetParams, p, 3, 10ull * 1000000ull, NULL);
+}
+
+void b32_set_voice_params(b32_emu *e, int inflection, int head_size,
+                          int excitation, int unvoiced) {
+    if (!e) return;
+    e->inflection = inflection;
+    e->head_size  = head_size;
+    e->excitation = excitation;
+    e->unvoiced   = unvoiced;
+}
+
+void b32_set_pitch(b32_emu *e, int percent) {
+    if (e) e->pitch_pct = percent > 0 ? percent : 100;
+}
+
+void b32_set_parse_flags(b32_emu *e, unsigned flags) {
+    if (e) e->parse_flags = flags;
+}
+
+void b32_set_phrase_prediction(b32_emu *e, int on) {
+    if (e) e->phrase_pred = on ? 1 : 0;
+}
+
+void b32_set_pause_caps(b32_emu *e, int interior_ms, int tail_ms) {
+    if (!e) return;
+    e->pause_cap_ms = interior_ms > 0 ? interior_ms : 0;
+    e->tail_cap_ms  = tail_ms > 0 ? tail_ms : 0;
 }
 
 void b32_set_speed(b32_emu *e, float speed) {
@@ -1116,6 +1244,7 @@ int b32_speak(b32_emu *e, const char *text, b32_audio_cb cb, void *user) {
     e->cb_user = user;
     e->abort = 0;
     e->msg_head = e->msg_tail = 0;
+    e->hold_len = e->hold_run = 0;   /* an aborted utterance may have left some */
     if (!cb) e->audio_len = 0;
 
     /* arg 2 is an opaque cookie the engine hands back as the waveOut callback
@@ -1128,19 +1257,65 @@ int b32_speak(b32_emu *e, const char *text, b32_audio_cb cb, void *user) {
     return rc;
 }
 
+static int clampi(int v, int lo, int hi) { return v < lo ? lo : (v > hi ? hi : v); }
+
+/* An override, or the voice's own value when none was set. */
+static int pick(int over, int voice_value) {
+    return over == B32_VOICE_DEFAULT ? voice_value : over;
+}
+
+/* Bit in parse_flags -> the engine's ~nN option number. */
+static const struct { unsigned bit; int n; } NFLAGS[] = {
+    { B32_PARSE_LETTER_NAMES,  1 }, { B32_PARSE_DIGITS,       2 },
+    { B32_PARSE_PUNCTUATION,   3 }, { B32_PARSE_WHITESPACE,   4 },
+    { B32_PARSE_FULL_NUMBERS,  6 }, { B32_PARSE_UPPER_WORDS,  7 },
+    { B32_PARSE_TIMES,         9 }, { B32_PARSE_ABBREV,      10 },
+};
+
+/* Every parameter the engine takes, in the one order that works. */
+static int build_prefix(b32_emu *e, const b32_voice *v, char *out, size_t cap) {
+    int hz = clampi(v->base_hz * e->pitch_pct / 100, 43, 600);
+    /* ~f discards a ~h set before it, which is why inflection comes after the
+     * baseline frequency here -- with the documented ordering the voice's own
+     * pitch range was silently dropped. ~r is a percentage where lower is
+     * faster, the opposite of this API, hence the negation; the caller's rate
+     * replaces the voice's own rather than composing with it, so a request for
+     * 300% means the same speed whichever voice is selected. */
+    int k = snprintf(out, cap, "~v%d]~e%d]~u%d]~f%d]~h%d]~r%d]",
+                     clampi(pick(e->head_size,  v->head_size),    0,   6),
+                     clampi(pick(e->excitation, v->excitation),   1,   6),
+                     clampi(pick(e->unvoiced,   v->unvoiced),   -70,  20),
+                     hz,
+                     clampi(pick(e->inflection, v->inflection), -300, 100),
+                     -e->rate);
+    if (k < 0 || (size_t)k >= cap) return -1;
+    /* Text-parser options are sticky engine state, so each is stated outright
+     * every utterance -- omitting one would leave a previous setting in force
+     * instead of turning it off. All-off is byte-identical to sending none. */
+    for (size_t i = 0; i < sizeof NFLAGS / sizeof NFLAGS[0]; i++) {
+        int n = snprintf(out + k, cap - (size_t)k, "~n%d,%d]", NFLAGS[i].n,
+                         (e->parse_flags & NFLAGS[i].bit) ? 1 : 0);
+        if (n < 0 || (size_t)n >= cap - (size_t)k) return -1;
+        k += n;
+    }
+    int n = snprintf(out + k, cap - (size_t)k, "~~2,%d]", e->phrase_pred ? 0 : 1);
+    if (n < 0 || (size_t)n >= cap - (size_t)k) return -1;
+    return k + n;
+}
+
 int b32_speak_voice(b32_emu *e, const b32_voice *v, const char *text,
                     b32_audio_cb cb, void *user) {
     if (!e || !text) return -1;
     if (!v) return b32_speak(e, text, cb, user);
-    /* ~r is a percentage of normal speed where lower is faster, the opposite of
-     * this API's convention, hence the negation. It lands after the voice
-     * prefix so it overrides the ~r the prefix carries. */
-    char rate_code[16];
-    snprintf(rate_code, sizeof rate_code, "~r%d]", -e->rate);
-    size_t n = strlen(v->prefix) + strlen(rate_code) + strlen(text) + 1;
+
+    char pre[256];
+    int plen = build_prefix(e, v, pre, sizeof pre);
+    if (plen < 0) { seterr(e, "voice prefix does not fit"); return -1; }
+
+    size_t n = (size_t)plen + strlen(text) + 1;
     char *buf = (char *)malloc(n);
     if (!buf) { seterr(e, "out of memory"); return -1; }
-    snprintf(buf, n, "%s%s%s", v->prefix, rate_code, text);
+    snprintf(buf, n, "%s%s", pre, text);
     int rc = b32_speak(e, buf, cb, user);
     free(buf);
     return rc;

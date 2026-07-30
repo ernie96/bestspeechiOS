@@ -83,11 +83,75 @@ the original can be moved or deleted afterwards. The picker accepts the file fro
 anywhere — Downloads, Drive, USB — and rejects anything that is not a 32-bit x86
 DLL exporting `bstCreate`.
 
-The same screen sets the default voice, pitch and volume. Speech rate is the
-system slider, since Android sends it with every request.
+The same screen sets the default voice and everything else the engine exposes —
+see below. Speech rate is the system slider, since Android sends it with every
+request.
 
 All 14 voices appear individually in Android's voice picker: Fred, Sara, Hary,
 Wendy, Dexter, Alien, Kit, Bruno, Ghost, Peeper, Dracula, Granny, Martha, Tim.
+
+## The parameter set
+
+Every parameter is delivered as a text code on each utterance, so all of them
+work on every utterance rather than only the first — see `BST_RATE_SETTING`
+below for why that matters.
+
+| Setting | Code | Range | Notes |
+| --- | --- | --- | --- |
+| Pitch | `~f` | 43–600 Hz | as a percentage of the voice's own baseline |
+| Volume | — | -70..20 dB | `bstSetParams(BST_GAIN_SETTING)`; this one does keep working |
+| Inflection | `~h` | -300..100 | pitch range; saturates below about -150 |
+| Head size | `~v` | 0..6 | 0 and 1 are the same |
+| Excitation | `~e` | 1..6 | 1 breathy, 2 whispery, 3 normal |
+| Unvoiced volume | `~u` | -70..20 dB | turned down, the speaker sounds blocked up |
+| Phrase prediction | `~~2` | on/off | look ahead for punctuation before setting the phrase contour |
+| Expand abbreviations | `~n10` | on/off | Dr. → doctor |
+| Times of day | `~n9` | on/off | 8:00 → eight o'clock |
+| Numbers in full | `~n6` | on/off | 1995 → one nine nine five |
+| Digits individually | `~n2` | on/off | |
+| Capital groups as words | `~n7` | on/off | NASA as a word |
+| Spell every letter | `~n1` | on/off | |
+| Speak punctuation | `~n3` | on/off | |
+| Speak spaces and line breaks | `~n4` | on/off | |
+
+The `~n` options are all **off** by default in this DLL revision, whatever the
+Keynote GOLD manual says about `~n9` and `~n10`, and each one above was confirmed
+to change the audio. `~n5` (mathematics) and `~n8` (control characters) are
+documented but do nothing here, so they are not offered. Since these are sticky
+engine state, each is stated outright on every utterance — omitting one would
+leave a previous setting in force instead of turning it off.
+
+The user pronunciation dictionary (`~x]` dictionary-entry mode) is not
+implemented.
+
+**`~f` silently discards a `~h` set before it.** The voice tables everyone
+inherited from `@rommix0`'s `bst.h` list the codes in the order
+`~v ~e ~h ~u ~f`, which means every voice's own pitch range has been thrown away
+— in `b32tts_wrapper` and BeSTspeak too, both of which append `~f` after the
+prefix. Emitting `~h` after `~f` is the whole of the fix, and it is why voices
+other than Fred, Dexter and Peeper (whose `~h` is 0) sound slightly more
+expressive or flatter here than in 0.2. Forcing `Inflection` to 0 reproduces the
+old output byte for byte.
+
+## Pauses
+
+The engine pauses about **420 ms** at a sentence, 180 ms at a comma, and appends
+**477 ms of exact digital silence** to the end of every utterance. At
+screen-reader speeds that trailing silence is dead air between one utterance and
+the next, so it is trimmed to 60 ms by default; the *Pauses* setting additionally
+caps the pauses inside an utterance (300/150/60 ms), and *Authentic* turns all
+trimming off.
+
+Trimming happens on the engine's own stream, ahead of sonic, so the caps are in
+engine time and shrink further with the rate multiplier. Silence is detected at
+-42 dBFS, comfortably above the handful of stray samples under 200 that the
+engine's pauses contain and far below anything audible as speech.
+
+Text is also mapped to printable ASCII before synthesis, with curly quotes, en
+and em dashes and ellipses converted rather than blanked — otherwise iOS's curly
+apostrophe turns "don't" into "don t", which the engine reads as two words. `~`
+is dropped from the text, since it is the engine's own lead-in character and
+would otherwise let text switch the parser into another mode mid-utterance.
 
 ## Two things that cost real time
 
@@ -178,6 +242,9 @@ is used only for the speed multiplier past the engine's 2.75x ceiling.
 
 ## Still open
 
+- **A user pronunciation dictionary.** The engine has one (`~x]` puts it in
+  dictionary-entry mode, associating a spelling with a phoneme string in RAM),
+  and nothing here uses it.
 - **Licensing** caps this at "bring your own DLL" regardless of how well it works.
 - **Sample-exact equivalence with native Windows** is unverified. This engine
   agreed byte-for-byte with a Python reference implementation and across

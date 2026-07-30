@@ -93,6 +93,32 @@ static void JNICALL n_set_speed(JNIEnv *env, jclass cls, jlong h, jfloat speed) 
     if (h) b32_set_speed((b32_emu *)(intptr_t)h, (float)speed);
 }
 
+static void JNICALL n_set_pitch(JNIEnv *env, jclass cls, jlong h, jint pct) {
+    (void)env; (void)cls;
+    if (h) b32_set_pitch((b32_emu *)(intptr_t)h, (int)pct);
+}
+
+static void JNICALL n_set_voice_params(JNIEnv *env, jclass cls, jlong h,
+                                      jint infl, jint head, jint exc, jint unv) {
+    (void)env; (void)cls;
+    if (h) b32_set_voice_params((b32_emu *)(intptr_t)h, (int)infl, (int)head,
+                                (int)exc, (int)unv);
+}
+
+static void JNICALL n_set_text_params(JNIEnv *env, jclass cls, jlong h,
+                                      jint flags, jboolean phrase) {
+    (void)env; (void)cls;
+    if (!h) return;
+    b32_set_parse_flags((b32_emu *)(intptr_t)h, (unsigned)flags);
+    b32_set_phrase_prediction((b32_emu *)(intptr_t)h, phrase == JNI_TRUE);
+}
+
+static void JNICALL n_set_pause_caps(JNIEnv *env, jclass cls, jlong h,
+                                     jint interior, jint tail) {
+    (void)env; (void)cls;
+    if (h) b32_set_pause_caps((b32_emu *)(intptr_t)h, (int)interior, (int)tail);
+}
+
 static jint JNICALL n_voice_count(JNIEnv *env, jclass cls) {
     (void)env; (void)cls;
     int n = 0;
@@ -162,6 +188,10 @@ static const JNINativeMethod METHODS[] = {
     { "setRate",    "(JI)V",                    (void *)n_set_rate },
     { "setGain",    "(JI)V",                    (void *)n_set_gain },
     { "setSpeed",   "(JF)V",                    (void *)n_set_speed },
+    { "setPitch",   "(JI)V",                    (void *)n_set_pitch },
+    { "setVoiceParams", "(JIIII)V",             (void *)n_set_voice_params },
+    { "setTextParams",  "(JIZ)V",               (void *)n_set_text_params },
+    { "setPauseCaps",   "(JII)V",               (void *)n_set_pause_caps },
     { "voiceCount", "()I",                      (void *)n_voice_count },
     { "voiceName",  "(I)Ljava/lang/String;",    (void *)n_voice_name },
     { "voiceBaseHz", "(I)I",                    (void *)n_voice_base_hz },

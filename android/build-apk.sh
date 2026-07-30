@@ -48,7 +48,9 @@ echo "--- linking resources ---"
     "$out/res/compiled.zip"
 
 echo "--- compiling java ---"
-"$JDK/bin/javac" -Xlint:all -classpath "$ANDROID_JAR" \
+# -encoding matters: the sources carry the curly-quote characters they map, and
+# javac otherwise assumes the platform encoding (windows-1252 here).
+"$JDK/bin/javac" -Xlint:all -encoding UTF-8 -classpath "$ANDROID_JAR" \
     -d "$out/classes" "$here"/src/com/bestspeech/tts/*.java
 
 echo "--- dexing ---"

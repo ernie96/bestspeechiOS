@@ -238,33 +238,46 @@ public class B32TtsService extends TextToSpeechService {
         if (voice == null || voice.isEmpty()) {
             voice = prefs.getString(B32SettingsActivity.PREF_VOICE, currentVoice);
         }
-        int voiceIndex = indexOfVoice(voice);
-        if (voiceIndex < 0) {
-            voiceIndex = 0;
-            voice = B32Native.voiceName(0);
-        }
+        // An unknown name would make the native side speak with no voice codes
+        // at all, so fall back rather than pass it through.
+        if (indexOfVoice(voice) < 0) voice = B32Native.voiceName(0);
 
         // Android sends rate and pitch as percentages of normal (100 = normal).
-        // Both parameters are set on every utterance rather than left at the
-        // engine's defaults, so output depends only on the request.
+        // Every parameter is set on each utterance rather than left at whatever
+        // the last one used, so output depends only on the request and the prefs.
         B32Native.setRate(handle, engineRate(request.getSpeechRate()));
         B32Native.setSpeed(handle, sonicSpeed(request.getSpeechRate()));
         B32Native.setGain(handle, clamp(
                 prefs.getInt(B32SettingsActivity.PREF_GAIN,
                              B32SettingsActivity.GAIN_DEFAULT), -70, 20));
-
-        String text = request.getCharSequenceText().toString();
         // The request's pitch and the engine's own setting compose: 150% from the
         // caller on a voice trimmed to 80% lands at 120% of its baseline.
-        int pitch = request.getPitch()
+        B32Native.setPitch(handle, request.getPitch()
                 * prefs.getInt(B32SettingsActivity.PREF_PITCH,
-                               B32SettingsActivity.PITCH_DEFAULT) / 100;
-        if (pitch != 100) {
-            // Control codes are applied in order, so an override placed ahead of
-            // the text wins over the voice prefix the native side prepends.
-            int hz = clamp(B32Native.voiceBaseHz(voiceIndex) * pitch / 100, 43, 600);
-            text = "~f" + hz + "]" + text;
-        }
+                               B32SettingsActivity.PITCH_DEFAULT) / 100);
+        int inflection = prefs.getInt(B32SettingsActivity.PREF_INFLECTION,
+                                      B32Native.VOICE_DEFAULT);
+        int headSize = prefs.getInt(B32SettingsActivity.PREF_HEAD_SIZE,
+                                    B32Native.VOICE_DEFAULT);
+        int excitation = prefs.getInt(B32SettingsActivity.PREF_EXCITATION,
+                                      B32Native.VOICE_DEFAULT);
+        int unvoiced = prefs.getInt(B32SettingsActivity.PREF_UNVOICED,
+                                    B32Native.VOICE_DEFAULT);
+        B32Native.setVoiceParams(handle, inflection, headSize, excitation, unvoiced);
+
+        int parseFlags = prefs.getInt(B32SettingsActivity.PREF_PARSE_FLAGS, 0);
+        boolean phrase = prefs.getBoolean(
+                B32SettingsActivity.PREF_PHRASE_PREDICTION, true);
+        B32Native.setTextParams(handle, parseFlags, phrase);
+        // One preference drives both caps: negative means leave the audio exactly
+        // as the engine produced it, otherwise the trailing silence is always
+        // trimmed and the number caps the pauses within the utterance.
+        int pause = prefs.getInt(B32SettingsActivity.PREF_PAUSE_CAP_MS,
+                                 B32SettingsActivity.PAUSE_DEFAULT);
+        B32Native.setPauseCaps(handle, Math.max(pause, 0),
+                pause < 0 ? 0 : B32SettingsActivity.TAIL_CAP_DEFAULT);
+
+        String text = sanitize(request.getCharSequenceText().toString());
 
         Log.i(TAG, "request: rate=" + request.getSpeechRate()
                 + " -> engine " + engineRate(request.getSpeechRate())
@@ -272,6 +285,15 @@ public class B32TtsService extends TextToSpeechService {
                 + ", pitch=" + request.getPitch()
                 + ", voice=" + voice
                 + ", text=[" + text + "]");
+        // Logged separately so a report of "setting X does nothing" can be
+        // answered by looking at what actually reached the engine.
+        Log.i(TAG, "params: inflection=" + param(inflection)
+                + " head=" + param(headSize)
+                + " excitation=" + param(excitation)
+                + " unvoiced=" + param(unvoiced)
+                + " parse=0x" + Integer.toHexString(parseFlags)
+                + " phrasePrediction=" + phrase
+                + " pause=" + pause);
 
         callback.start(B32Native.SAMPLE_RATE, AudioFormat.ENCODING_PCM_16BIT, 1);
         final int maxChunk = Math.max(512, callback.getMaxBufferSize());
@@ -302,12 +324,48 @@ public class B32TtsService extends TextToSpeechService {
         callback.done();
     }
 
+    /**
+     * Unicode punctuation with an unambiguous ASCII equivalent, mapped rather
+     * than blanked. Otherwise iOS's curly apostrophe turns "don't" into "don t",
+     * which the engine reads as two words.
+     */
+    private static final String CURLY =
+            "‘’‚′"      // left/right/low quote, prime
+            + "“”„″"    // the double-quote equivalents
+            + "–—−"           // en dash, em dash, minus sign
+            + "… ";                 // ellipsis, non-breaking space
+    private static final String PLAIN =
+            "''''" + "\"\"\"\"" + "---" + ". ";
+
+    /**
+     * Makes text safe for a 1995 ASCII engine.
+     *
+     * <p>Beyond the character mapping this drops {@code ~}, the engine's lead-in
+     * character: left in place it is at best a homograph mark and at worst lets
+     * text switch the parser into another mode for the rest of the utterance.
+     */
+    static String sanitize(String in) {
+        StringBuilder sb = new StringBuilder(in.length());
+        for (int i = 0; i < in.length(); i++) {
+            char c = in.charAt(i);
+            int k = CURLY.indexOf(c);
+            if (k >= 0) c = PLAIN.charAt(k);
+            if (c == '~') continue;
+            sb.append(c >= 0x20 && c <= 0x7E ? c : ' ');
+        }
+        return sb.toString();
+    }
+
     private int indexOfVoice(String name) {
         if (name == null) return -1;
         for (int i = 0; i < B32Native.voiceCount(); i++) {
             if (B32Native.voiceName(i).equals(name)) return i;
         }
         return -1;
+    }
+
+    private static String param(int v) {
+        return v == B32Native.VOICE_DEFAULT ? "voice" : Integer.toString(v);
     }
 
     private static int clamp(int v, int lo, int hi) {
