@@ -24,9 +24,8 @@ jobs:
 
       - name: Build unicorn for iOS
         run: |
-          # Redefine the unavailable JIT APIs in the most widely included header
-          echo "#define pthread_jit_write_protect_supported_np() 0" >> third_party/unicorn/qemu/include/qemu/osdep.h
-          echo "#define pthread_jit_write_protect_np(x) (void)(x)" >> third_party/unicorn/qemu/include/qemu/osdep.h
+          # Undefine the macro that enables macOS JIT code paths in QEMU
+          echo "#undef HAVE_PTHREAD_JIT_PROTECT" >> third_party/unicorn/qemu/include/qemu/osdep.h
           
           mkdir -p third_party/unicorn/build-ios
           cd third_party/unicorn/build-ios
