@@ -30,7 +30,7 @@ jobs:
         run: |
           mkdir -p third_party/unicorn/build-ios
           cd third_party/unicorn/build-ios
-          cmake .. -G Ninja -DCMAKE_TOOLCHAIN_FILE=../../ios.toolchain.cmake -DPLATFORM=OS64 -DUNICORN_ARCH=x86 -DBUILD_SHARED_LIBS=OFF -DUNICORN_BUILD_TESTS=OFF -DCMAKE_BUILD_TYPE=Release
+          cmake .. -G Ninja -DCMAKE_TOOLCHAIN_FILE=../../../ios.toolchain.cmake -DPLATFORM=OS64 -DUNICORN_ARCH=x86 -DBUILD_SHARED_LIBS=OFF -DUNICORN_BUILD_TESTS=OFF -DCMAKE_BUILD_TYPE=Release
           cmake --build .
 
       - name: Generate Xcode Project
