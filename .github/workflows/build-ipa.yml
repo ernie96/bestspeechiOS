@@ -17,20 +17,11 @@ jobs:
         run: |
           brew install xcodegen cmake ninja
 
-      - name: Create Dummy ios.toolchain.cmake (Fallback if needed)
-        run: |
-          # If a proper ios.toolchain.cmake isn't provided, this creates a simple one
-          cat << 'EOF' > ios.toolchain.cmake
-          set(CMAKE_SYSTEM_NAME iOS)
-          set(CMAKE_OSX_SYSROOT iphoneos)
-          set(CMAKE_OSX_ARCHITECTURES arm64)
-          EOF
-
       - name: Build unicorn for iOS
         run: |
           mkdir -p third_party/unicorn/build-ios
           cd third_party/unicorn/build-ios
-          cmake .. -G Ninja -DCMAKE_TOOLCHAIN_FILE=../../../ios.toolchain.cmake -DPLATFORM=OS64 -DUNICORN_ARCH=x86 -DBUILD_SHARED_LIBS=OFF -DUNICORN_BUILD_TESTS=OFF -DCMAKE_BUILD_TYPE=Release
+          cmake .. -G Ninja -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_SYSROOT=iphoneos -DCMAKE_OSX_ARCHITECTURES=arm64 -DUNICORN_ARCH=x86 -DBUILD_SHARED_LIBS=OFF -DUNICORN_BUILD_TESTS=OFF -DCMAKE_BUILD_TYPE=Release
           cmake --build .
 
       - name: Generate Xcode Project
