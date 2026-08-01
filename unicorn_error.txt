@@ -1,555 +1,147 @@
 -- The C compiler identification is AppleClang 21.0.0.21000101
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
--- Check for working C compiler: /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang - skipped
+-- Check for working C compiler: /usr/bin/cc - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
-
-ERROR: "/Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" cannot build an executable (is your linker broken?)
-
--- Configuring done (21.1s)
+Disabling PIE due to missing toolchain support
+Install prefix    /usr/local
+binary directory  /usr/local/bin
+library directory /usr/local/lib
+libexec directory /usr/local/libexec
+include directory /usr/local/include
+config directory  /usr/local/etc
+local state directory   /usr/local/var
+ELF interp prefix /usr/gnemul/qemu-%M
+Build directory   /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios
+Source path       /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu
+GIT binary        git
+GIT submodules    
+C compiler        /usr/bin/cc
+Host C compiler   cc
+C++ compiler      c++
+Objective-C compiler clang
+ARFLAGS           rv
+CFLAGS            -g 
+QEMU_CFLAGS        -DOS_OBJECT_USE_OBJC=0 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wall -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -std=gnu99  -DUNICORN_HAS_X86 -DUNICORN_HAS_ARM -DUNICORN_HAS_ARM64 -DUNICORN_HAS_M68K -DUNICORN_HAS_MIPS -DUNICORN_HAS_MIPSEL -DUNICORN_HAS_MIPS64 -DUNICORN_HAS_MIPS64EL -DUNICORN_HAS_SPARC -DUNICORN_HAS_PPC -DUNICORN_HAS_RISCV -DUNICORN_HAS_S390X -DUNICORN_HAS_TRICORE -fPIC -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk  -Wno-string-plus-int -Wno-typedef-redefinition -Wno-initializer-overrides -Wexpansion-to-defined -Wendif-labels -Wno-shift-negative-value -Wno-missing-include-dirs -Wempty-body -Wnested-externs -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wold-style-definition -Wtype-limits -fstack-protector-strong
+QEMU_LDFLAGS      -framework CoreFoundation -framework IOKit  -DUNICORN_HAS_X86 -DUNICORN_HAS_ARM -DUNICORN_HAS_ARM64 -DUNICORN_HAS_M68K -DUNICORN_HAS_MIPS -DUNICORN_HAS_MIPSEL -DUNICORN_HAS_MIPS64 -DUNICORN_HAS_MIPS64EL -DUNICORN_HAS_SPARC -DUNICORN_HAS_PPC -DUNICORN_HAS_RISCV -DUNICORN_HAS_S390X -DUNICORN_HAS_TRICORE -fPIC -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk  -fstack-protector-strong
+make              make
+install           install
+host CPU          aarch64
+host big endian   no
+target list       x86_64-softmmu  arm-softmmu  aarch64-softmmu  m68k-softmmu  mips-softmmu  mipsel-softmmu  mips64-softmmu  mips64el-softmmu  sparc-softmmu  sparc64-softmmu  ppc-softmmu  ppc64-softmmu  riscv32-softmmu  riscv64-softmmu  s390x-softmmu  tricore-softmmu   
+strip binaries    yes
+static build      no
+mingw32 support   no
+PIE               no
+TCG support       yes
+malloc trim support no
+membarrier        no
+madvise           yes
+posix_madvise     yes
+posix_memalign    yes
+debug stack usage no
+tcmalloc support  no
+jemalloc support  no
+avx2 optimization 
+avx512f optimization no
+-- Configuring done (9.4s)
 -- Generating done (0.1s)
 -- Build files have been written to: /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios
-Command line invocation:
-    /Applications/Xcode_26.6.app/Contents/Developer/usr/bin/xcodebuild -project unicorn.xcodeproj build -configuration Release -parallelizeTargets -hideShellScriptEnvironment -target ALL_BUILD
-
-ComputePackagePrebuildTargetDependencyGraph
-
-CreateBuildRequest
-
-SendProjectDescription
-
-CreateBuildOperation
-
-ComputeTargetDependencyGraph
-note: Building targets in dependency order
-note: Target dependency graph (21 targets)
-    Target 'ALL_BUILD' in project 'unicorn'
-        ➜ Explicit dependency on target 'x86_64-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'arm-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'aarch64-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'm68k-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'mips-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'mipsel-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'mips64-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'mips64el-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'sparc-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'sparc64-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'ppc-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'ppc64-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'riscv32-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'riscv64-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 's390x-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'tricore-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'unicorn-common' in project 'unicorn'
-        ➜ Explicit dependency on target 'unicorn' in project 'unicorn'
-        ➜ Explicit dependency on target 'unicorn_archive' in project 'unicorn'
-        ➜ Explicit dependency on target 'ZERO_CHECK' in project 'unicorn'
-    Target 'unicorn_archive' in project 'unicorn'
-        ➜ Explicit dependency on target 'x86_64-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'arm-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'aarch64-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'm68k-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'mips-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'mipsel-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'mips64-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'mips64el-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'sparc-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'sparc64-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'ppc-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'ppc64-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'riscv32-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'riscv64-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 's390x-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'tricore-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'unicorn-common' in project 'unicorn'
-        ➜ Explicit dependency on target 'unicorn' in project 'unicorn'
-        ➜ Explicit dependency on target 'ZERO_CHECK' in project 'unicorn'
-    Target 'unicorn' in project 'unicorn'
-        ➜ Explicit dependency on target 'x86_64-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'arm-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'aarch64-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'm68k-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'mips-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'mipsel-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'mips64-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'mips64el-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'sparc-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'sparc64-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'ppc-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'ppc64-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'riscv32-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'riscv64-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 's390x-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'tricore-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'unicorn-common' in project 'unicorn'
-        ➜ Explicit dependency on target 'ZERO_CHECK' in project 'unicorn'
-    Target 'tricore-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'unicorn-common' in project 'unicorn'
-        ➜ Explicit dependency on target 'ZERO_CHECK' in project 'unicorn'
-    Target 's390x-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'unicorn-common' in project 'unicorn'
-        ➜ Explicit dependency on target 'ZERO_CHECK' in project 'unicorn'
-    Target 'riscv64-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'unicorn-common' in project 'unicorn'
-        ➜ Explicit dependency on target 'ZERO_CHECK' in project 'unicorn'
-    Target 'riscv32-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'unicorn-common' in project 'unicorn'
-        ➜ Explicit dependency on target 'ZERO_CHECK' in project 'unicorn'
-    Target 'ppc64-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'unicorn-common' in project 'unicorn'
-        ➜ Explicit dependency on target 'ZERO_CHECK' in project 'unicorn'
-    Target 'ppc-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'unicorn-common' in project 'unicorn'
-        ➜ Explicit dependency on target 'ZERO_CHECK' in project 'unicorn'
-    Target 'sparc64-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'unicorn-common' in project 'unicorn'
-        ➜ Explicit dependency on target 'ZERO_CHECK' in project 'unicorn'
-    Target 'sparc-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'unicorn-common' in project 'unicorn'
-        ➜ Explicit dependency on target 'ZERO_CHECK' in project 'unicorn'
-    Target 'mips64el-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'unicorn-common' in project 'unicorn'
-        ➜ Explicit dependency on target 'ZERO_CHECK' in project 'unicorn'
-    Target 'mips64-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'unicorn-common' in project 'unicorn'
-        ➜ Explicit dependency on target 'ZERO_CHECK' in project 'unicorn'
-    Target 'mipsel-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'unicorn-common' in project 'unicorn'
-        ➜ Explicit dependency on target 'ZERO_CHECK' in project 'unicorn'
-    Target 'mips-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'unicorn-common' in project 'unicorn'
-        ➜ Explicit dependency on target 'ZERO_CHECK' in project 'unicorn'
-    Target 'm68k-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'unicorn-common' in project 'unicorn'
-        ➜ Explicit dependency on target 'ZERO_CHECK' in project 'unicorn'
-    Target 'aarch64-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'unicorn-common' in project 'unicorn'
-        ➜ Explicit dependency on target 'ZERO_CHECK' in project 'unicorn'
-    Target 'arm-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'unicorn-common' in project 'unicorn'
-        ➜ Explicit dependency on target 'ZERO_CHECK' in project 'unicorn'
-    Target 'x86_64-softmmu' in project 'unicorn'
-        ➜ Explicit dependency on target 'unicorn-common' in project 'unicorn'
-        ➜ Explicit dependency on target 'ZERO_CHECK' in project 'unicorn'
-    Target 'unicorn-common' in project 'unicorn'
-        ➜ Explicit dependency on target 'ZERO_CHECK' in project 'unicorn'
-    Target 'ZERO_CHECK' in project 'unicorn' (no dependencies)
-
-GatherProvisioningInputs
-
-CreateBuildDescription
-
-ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -x c -c /dev/null
-
-ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -x c -c /dev/null
-
-ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -V
-
-Build description signature: 29417f537006bf2ac548c3a019de5656
-Build description path: /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/XCBuildData/29417f537006bf2ac548c3a019de5656.xcbuilddata
-CreateBuildDirectory /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/unicorn.xcodeproj
-    builtin-create-build-directory /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos
-
-CreateBuildDirectory /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/unicorn.xcodeproj
-    builtin-create-build-directory /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build
-
-ClangStatCache /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk /var/folders/df/djsxfhc17x95674wsm_g8s980000gn/C/com.apple.DeveloperTools/26.6-17F113/Xcode/SDKStatCaches.noindex/iphoneos26.5-23F81a-688ef53f1462e2c8f657fdc38a81448fee66e23052a0157c865c76b268046726.sdkstatcache
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/unicorn.xcodeproj
-    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -o /var/folders/df/djsxfhc17x95674wsm_g8s980000gn/C/com.apple.DeveloperTools/26.6-17F113/Xcode/SDKStatCaches.noindex/iphoneos26.5-23F81a-688ef53f1462e2c8f657fdc38a81448fee66e23052a0157c865c76b268046726.sdkstatcache
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn.build/Release-iphoneos/ZERO_CHECK.build/Script-5D17A43EC587F95D5932A19E.sh (in target 'ZERO_CHECK' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn.build/Release-iphoneos/ZERO_CHECK.build/Script-5D17A43EC587F95D5932A19E.sh
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn.build/Release-iphoneos/ALL_BUILD.build/Script-C57CC8538764E12AF1F2678B.sh (in target 'ALL_BUILD' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn.build/Release-iphoneos/ALL_BUILD.build/Script-C57CC8538764E12AF1F2678B.sh
-
-CreateBuildDirectory /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/SwiftExplicitPrecompiledModules
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/unicorn.xcodeproj
-    builtin-create-build-directory /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/SwiftExplicitPrecompiledModules
-
-PhaseScriptExecution Generate\ CMakeFiles/ZERO_CHECK /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn.build/Release-iphoneos/ZERO_CHECK.build/Script-5D17A43EC587F95D5932A19E.sh (in target 'ZERO_CHECK' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    /bin/sh -c /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn.build/Release-iphoneos/ZERO_CHECK.build/Script-5D17A43EC587F95D5932A19E.sh
-make: `/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/CMakeFiles/cmake.check_cache' is up to date.
-
-CreateBuildDirectory /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/Release-iphoneos
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/unicorn.xcodeproj
-    builtin-create-build-directory /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/Release-iphoneos
-
-CreateBuildDirectory /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/ExplicitPrecompiledModules
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/unicorn.xcodeproj
-    builtin-create-build-directory /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/ExplicitPrecompiledModules
-
-CreateBuildDirectory /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/EagerLinkingTBDs/Release-iphoneos
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/unicorn.xcodeproj
-    builtin-create-build-directory /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/EagerLinkingTBDs/Release-iphoneos
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/x86_64-softmmu.DependencyStaticMetadataFileList (in target 'x86_64-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/x86_64-softmmu.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/x86_64-softmmu.DependencyMetadataFileList (in target 'x86_64-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/x86_64-softmmu.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/x86_64-softmmu.LinkFileList (in target 'x86_64-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/x86_64-softmmu.LinkFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp (in target 'x86_64-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
--fpascal-strings -O3 '-DCMAKE_INTDIR="Release-iphoneos"' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/DerivedSources-normal/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/DerivedSources/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/DerivedSources -F/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos -DNDEBUG '-std=gnu11' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE '-D_FILE_OFFSET_BITS=64' -D_LARGEFILE_SOURCE -fPIC -DNEED_CPU_H -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/x86_64-softmmu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn_archive.build/Release-iphoneos/unicorn.DependencyStaticMetadataFileList (in target 'unicorn_archive' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn_archive.build/Release-iphoneos/unicorn.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn_archive.build/Release-iphoneos/unicorn.DependencyMetadataFileList (in target 'unicorn_archive' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn_archive.build/Release-iphoneos/unicorn.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn_archive.build/Release-iphoneos/Script-867B2AC4B76752F8A5887EB5.sh (in target 'unicorn_archive' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn_archive.build/Release-iphoneos/Script-867B2AC4B76752F8A5887EB5.sh
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn-common.build/Release-iphoneos/unicorn-common.DependencyStaticMetadataFileList (in target 'unicorn-common' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn-common.build/Release-iphoneos/unicorn-common.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn-common.build/Release-iphoneos/unicorn-common.DependencyMetadataFileList (in target 'unicorn-common' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn-common.build/Release-iphoneos/unicorn-common.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn-common.build/Release-iphoneos/Objects-normal/arm64/unicorn-common.LinkFileList (in target 'unicorn-common' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn-common.build/Release-iphoneos/Objects-normal/arm64/unicorn-common.LinkFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn-common.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp (in target 'unicorn-common' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn-common.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
--fpascal-strings -O3 '-DCMAKE_INTDIR="Release-iphoneos"' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn-common.build/Release-iphoneos/DerivedSources-normal/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn-common.build/Release-iphoneos/DerivedSources/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn-common.build/Release-iphoneos/DerivedSources -F/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos -DNDEBUG '-std=gnu11' '-fvisibility=hidden' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE '-D_FILE_OFFSET_BITS=64' -D_LARGEFILE_SOURCE -fPIC -DUNICORN_HAS_X86 -DUNICORN_HAS_ARM -DUNICORN_HAS_ARM64 -DUNICORN_HAS_M68K -DUNICORN_HAS_MIPS -DUNICORN_HAS_MIPSEL -DUNICORN_HAS_MIPS64 -DUNICORN_HAS_MIPS64EL -DUNICORN_HAS_SPARC -DUNICORN_HAS_PPC -DUNICORN_HAS_RISCV -DUNICORN_HAS_S390X -DUNICORN_HAS_TRICORE
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn.build/Release-iphoneos/unicorn-static.DependencyStaticMetadataFileList (in target 'unicorn' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn.build/Release-iphoneos/unicorn-static.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn.build/Release-iphoneos/unicorn-static.DependencyMetadataFileList (in target 'unicorn' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn.build/Release-iphoneos/unicorn-static.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn.build/Release-iphoneos/Objects-normal/arm64/unicorn-static.LinkFileList (in target 'unicorn' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn.build/Release-iphoneos/Objects-normal/arm64/unicorn-static.LinkFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp (in target 'unicorn' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
--fpascal-strings -O3 '-DCMAKE_INTDIR="Release-iphoneos"' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn.build/Release-iphoneos/DerivedSources-normal/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn.build/Release-iphoneos/DerivedSources/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/unicorn.build/Release-iphoneos/DerivedSources -F/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos -DNDEBUG '-std=gnu11' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE '-D_FILE_OFFSET_BITS=64' -D_LARGEFILE_SOURCE -fPIC -DUNICORN_HAS_X86 -DUNICORN_HAS_ARM -DUNICORN_HAS_ARM64 -DUNICORN_HAS_M68K -DUNICORN_HAS_MIPS -DUNICORN_HAS_MIPSEL -DUNICORN_HAS_MIPS64 -DUNICORN_HAS_MIPS64EL -DUNICORN_HAS_SPARC -DUNICORN_HAS_PPC -DUNICORN_HAS_RISCV -DUNICORN_HAS_S390X -DUNICORN_HAS_TRICORE
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/tricore-softmmu.build/Release-iphoneos/tricore-softmmu.DependencyStaticMetadataFileList (in target 'tricore-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/tricore-softmmu.build/Release-iphoneos/tricore-softmmu.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/tricore-softmmu.build/Release-iphoneos/tricore-softmmu.DependencyMetadataFileList (in target 'tricore-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/tricore-softmmu.build/Release-iphoneos/tricore-softmmu.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/tricore-softmmu.build/Release-iphoneos/Objects-normal/arm64/tricore-softmmu.LinkFileList (in target 'tricore-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/tricore-softmmu.build/Release-iphoneos/Objects-normal/arm64/tricore-softmmu.LinkFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/tricore-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp (in target 'tricore-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/tricore-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
--fpascal-strings -O3 '-DCMAKE_INTDIR="Release-iphoneos"' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/tricore-softmmu.build/Release-iphoneos/DerivedSources-normal/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/tricore-softmmu.build/Release-iphoneos/DerivedSources/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/tricore-softmmu.build/Release-iphoneos/DerivedSources -F/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos -DNDEBUG '-std=gnu11' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE '-D_FILE_OFFSET_BITS=64' -D_LARGEFILE_SOURCE -fPIC -DNEED_CPU_H -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/tricore-softmmu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/tricore
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/sparc64-softmmu.build/Release-iphoneos/sparc64-softmmu.DependencyStaticMetadataFileList (in target 'sparc64-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/sparc64-softmmu.build/Release-iphoneos/sparc64-softmmu.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/sparc64-softmmu.build/Release-iphoneos/sparc64-softmmu.DependencyMetadataFileList (in target 'sparc64-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/sparc64-softmmu.build/Release-iphoneos/sparc64-softmmu.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/sparc64-softmmu.build/Release-iphoneos/Objects-normal/arm64/sparc64-softmmu.LinkFileList (in target 'sparc64-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/sparc64-softmmu.build/Release-iphoneos/Objects-normal/arm64/sparc64-softmmu.LinkFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/sparc64-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp (in target 'sparc64-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/sparc64-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
--fpascal-strings -O3 '-DCMAKE_INTDIR="Release-iphoneos"' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/sparc64-softmmu.build/Release-iphoneos/DerivedSources-normal/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/sparc64-softmmu.build/Release-iphoneos/DerivedSources/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/sparc64-softmmu.build/Release-iphoneos/DerivedSources -F/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos -DNDEBUG '-std=gnu11' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE '-D_FILE_OFFSET_BITS=64' -D_LARGEFILE_SOURCE -fPIC -DNEED_CPU_H -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/sparc64-softmmu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/sparc
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/sparc-softmmu.build/Release-iphoneos/sparc-softmmu.DependencyStaticMetadataFileList (in target 'sparc-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/sparc-softmmu.build/Release-iphoneos/sparc-softmmu.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/sparc-softmmu.build/Release-iphoneos/sparc-softmmu.DependencyMetadataFileList (in target 'sparc-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/sparc-softmmu.build/Release-iphoneos/sparc-softmmu.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/sparc-softmmu.build/Release-iphoneos/Objects-normal/arm64/sparc-softmmu.LinkFileList (in target 'sparc-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/sparc-softmmu.build/Release-iphoneos/Objects-normal/arm64/sparc-softmmu.LinkFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/sparc-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp (in target 'sparc-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/sparc-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
--fpascal-strings -O3 '-DCMAKE_INTDIR="Release-iphoneos"' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/sparc-softmmu.build/Release-iphoneos/DerivedSources-normal/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/sparc-softmmu.build/Release-iphoneos/DerivedSources/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/sparc-softmmu.build/Release-iphoneos/DerivedSources -F/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos -DNDEBUG '-std=gnu11' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE '-D_FILE_OFFSET_BITS=64' -D_LARGEFILE_SOURCE -fPIC -DNEED_CPU_H -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/sparc-softmmu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/sparc
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/s390x-softmmu.build/Release-iphoneos/s390x-softmmu.DependencyStaticMetadataFileList (in target 's390x-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/s390x-softmmu.build/Release-iphoneos/s390x-softmmu.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/s390x-softmmu.build/Release-iphoneos/s390x-softmmu.DependencyMetadataFileList (in target 's390x-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/s390x-softmmu.build/Release-iphoneos/s390x-softmmu.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/s390x-softmmu.build/Release-iphoneos/Objects-normal/arm64/s390x-softmmu.LinkFileList (in target 's390x-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/s390x-softmmu.build/Release-iphoneos/Objects-normal/arm64/s390x-softmmu.LinkFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/s390x-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp (in target 's390x-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/s390x-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
--fpascal-strings -O3 '-DCMAKE_INTDIR="Release-iphoneos"' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/s390x-softmmu.build/Release-iphoneos/DerivedSources-normal/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/s390x-softmmu.build/Release-iphoneos/DerivedSources/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/s390x-softmmu.build/Release-iphoneos/DerivedSources -F/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos -DNDEBUG '-std=gnu11' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE '-D_FILE_OFFSET_BITS=64' -D_LARGEFILE_SOURCE -fPIC -DNEED_CPU_H -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/s390x-softmmu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/s390x
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/riscv64-softmmu.build/Release-iphoneos/riscv64-softmmu.DependencyStaticMetadataFileList (in target 'riscv64-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/riscv64-softmmu.build/Release-iphoneos/riscv64-softmmu.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/riscv64-softmmu.build/Release-iphoneos/riscv64-softmmu.DependencyMetadataFileList (in target 'riscv64-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/riscv64-softmmu.build/Release-iphoneos/riscv64-softmmu.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/riscv64-softmmu.build/Release-iphoneos/Objects-normal/arm64/riscv64-softmmu.LinkFileList (in target 'riscv64-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/riscv64-softmmu.build/Release-iphoneos/Objects-normal/arm64/riscv64-softmmu.LinkFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/riscv64-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp (in target 'riscv64-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/riscv64-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
--fpascal-strings -O3 '-DCMAKE_INTDIR="Release-iphoneos"' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/riscv64-softmmu.build/Release-iphoneos/DerivedSources-normal/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/riscv64-softmmu.build/Release-iphoneos/DerivedSources/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/riscv64-softmmu.build/Release-iphoneos/DerivedSources -F/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos -DNDEBUG '-std=gnu11' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE '-D_FILE_OFFSET_BITS=64' -D_LARGEFILE_SOURCE -fPIC -DNEED_CPU_H -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/riscv64-softmmu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/riscv
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/riscv32-softmmu.build/Release-iphoneos/riscv32-softmmu.DependencyStaticMetadataFileList (in target 'riscv32-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/riscv32-softmmu.build/Release-iphoneos/riscv32-softmmu.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/riscv32-softmmu.build/Release-iphoneos/riscv32-softmmu.DependencyMetadataFileList (in target 'riscv32-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/riscv32-softmmu.build/Release-iphoneos/riscv32-softmmu.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/riscv32-softmmu.build/Release-iphoneos/Objects-normal/arm64/riscv32-softmmu.LinkFileList (in target 'riscv32-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/riscv32-softmmu.build/Release-iphoneos/Objects-normal/arm64/riscv32-softmmu.LinkFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/riscv32-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp (in target 'riscv32-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/riscv32-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
--fpascal-strings -O3 '-DCMAKE_INTDIR="Release-iphoneos"' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/riscv32-softmmu.build/Release-iphoneos/DerivedSources-normal/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/riscv32-softmmu.build/Release-iphoneos/DerivedSources/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/riscv32-softmmu.build/Release-iphoneos/DerivedSources -F/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos -DNDEBUG '-std=gnu11' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE '-D_FILE_OFFSET_BITS=64' -D_LARGEFILE_SOURCE -fPIC -DNEED_CPU_H -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/riscv32-softmmu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/riscv
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/ppc64-softmmu.build/Release-iphoneos/ppc64-softmmu.DependencyStaticMetadataFileList (in target 'ppc64-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/ppc64-softmmu.build/Release-iphoneos/ppc64-softmmu.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/ppc64-softmmu.build/Release-iphoneos/ppc64-softmmu.DependencyMetadataFileList (in target 'ppc64-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/ppc64-softmmu.build/Release-iphoneos/ppc64-softmmu.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/ppc64-softmmu.build/Release-iphoneos/Objects-normal/arm64/ppc64-softmmu.LinkFileList (in target 'ppc64-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/ppc64-softmmu.build/Release-iphoneos/Objects-normal/arm64/ppc64-softmmu.LinkFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/ppc64-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp (in target 'ppc64-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/ppc64-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
--fpascal-strings -O3 '-DCMAKE_INTDIR="Release-iphoneos"' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/ppc64-softmmu.build/Release-iphoneos/DerivedSources-normal/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/ppc64-softmmu.build/Release-iphoneos/DerivedSources/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/ppc64-softmmu.build/Release-iphoneos/DerivedSources -F/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos -DNDEBUG '-std=gnu11' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE '-D_FILE_OFFSET_BITS=64' -D_LARGEFILE_SOURCE -fPIC -DNEED_CPU_H -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/ppc64-softmmu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/ppc
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/ppc-softmmu.build/Release-iphoneos/ppc-softmmu.DependencyStaticMetadataFileList (in target 'ppc-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/ppc-softmmu.build/Release-iphoneos/ppc-softmmu.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/ppc-softmmu.build/Release-iphoneos/ppc-softmmu.DependencyMetadataFileList (in target 'ppc-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/ppc-softmmu.build/Release-iphoneos/ppc-softmmu.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/ppc-softmmu.build/Release-iphoneos/Objects-normal/arm64/ppc-softmmu.LinkFileList (in target 'ppc-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/ppc-softmmu.build/Release-iphoneos/Objects-normal/arm64/ppc-softmmu.LinkFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/ppc-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp (in target 'ppc-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/ppc-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
--fpascal-strings -O3 '-DCMAKE_INTDIR="Release-iphoneos"' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/ppc-softmmu.build/Release-iphoneos/DerivedSources-normal/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/ppc-softmmu.build/Release-iphoneos/DerivedSources/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/ppc-softmmu.build/Release-iphoneos/DerivedSources -F/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos -DNDEBUG '-std=gnu11' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE '-D_FILE_OFFSET_BITS=64' -D_LARGEFILE_SOURCE -fPIC -DNEED_CPU_H -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/ppc-softmmu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/ppc
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mipsel-softmmu.build/Release-iphoneos/mipsel-softmmu.DependencyStaticMetadataFileList (in target 'mipsel-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mipsel-softmmu.build/Release-iphoneos/mipsel-softmmu.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mipsel-softmmu.build/Release-iphoneos/mipsel-softmmu.DependencyMetadataFileList (in target 'mipsel-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mipsel-softmmu.build/Release-iphoneos/mipsel-softmmu.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mipsel-softmmu.build/Release-iphoneos/Objects-normal/arm64/mipsel-softmmu.LinkFileList (in target 'mipsel-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mipsel-softmmu.build/Release-iphoneos/Objects-normal/arm64/mipsel-softmmu.LinkFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mipsel-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp (in target 'mipsel-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mipsel-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
--fpascal-strings -O3 '-DCMAKE_INTDIR="Release-iphoneos"' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mipsel-softmmu.build/Release-iphoneos/DerivedSources-normal/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mipsel-softmmu.build/Release-iphoneos/DerivedSources/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mipsel-softmmu.build/Release-iphoneos/DerivedSources -F/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos -DNDEBUG '-std=gnu11' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE '-D_FILE_OFFSET_BITS=64' -D_LARGEFILE_SOURCE -fPIC -DNEED_CPU_H -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/mipsel-softmmu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/mips
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips64el-softmmu.build/Release-iphoneos/mips64el-softmmu.DependencyMetadataFileList (in target 'mips64el-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips64el-softmmu.build/Release-iphoneos/mips64el-softmmu.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips64el-softmmu.build/Release-iphoneos/mips64el-softmmu.DependencyStaticMetadataFileList (in target 'mips64el-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips64el-softmmu.build/Release-iphoneos/mips64el-softmmu.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips64el-softmmu.build/Release-iphoneos/Objects-normal/arm64/mips64el-softmmu.LinkFileList (in target 'mips64el-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips64el-softmmu.build/Release-iphoneos/Objects-normal/arm64/mips64el-softmmu.LinkFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips64el-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp (in target 'mips64el-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips64el-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
--fpascal-strings -O3 '-DCMAKE_INTDIR="Release-iphoneos"' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips64el-softmmu.build/Release-iphoneos/DerivedSources-normal/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips64el-softmmu.build/Release-iphoneos/DerivedSources/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips64el-softmmu.build/Release-iphoneos/DerivedSources -F/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos -DNDEBUG '-std=gnu11' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE '-D_FILE_OFFSET_BITS=64' -D_LARGEFILE_SOURCE -fPIC -DNEED_CPU_H -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/mips64el-softmmu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/mips
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips64-softmmu.build/Release-iphoneos/mips64-softmmu.DependencyStaticMetadataFileList (in target 'mips64-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips64-softmmu.build/Release-iphoneos/mips64-softmmu.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips64-softmmu.build/Release-iphoneos/mips64-softmmu.DependencyMetadataFileList (in target 'mips64-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips64-softmmu.build/Release-iphoneos/mips64-softmmu.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips64-softmmu.build/Release-iphoneos/Objects-normal/arm64/mips64-softmmu.LinkFileList (in target 'mips64-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips64-softmmu.build/Release-iphoneos/Objects-normal/arm64/mips64-softmmu.LinkFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips64-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp (in target 'mips64-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips64-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
--fpascal-strings -O3 '-DCMAKE_INTDIR="Release-iphoneos"' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips64-softmmu.build/Release-iphoneos/DerivedSources-normal/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips64-softmmu.build/Release-iphoneos/DerivedSources/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips64-softmmu.build/Release-iphoneos/DerivedSources -F/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos -DNDEBUG '-std=gnu11' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE '-D_FILE_OFFSET_BITS=64' -D_LARGEFILE_SOURCE -fPIC -DNEED_CPU_H -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/mips64-softmmu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/mips
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips-softmmu.build/Release-iphoneos/mips-softmmu.DependencyStaticMetadataFileList (in target 'mips-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips-softmmu.build/Release-iphoneos/mips-softmmu.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips-softmmu.build/Release-iphoneos/mips-softmmu.DependencyMetadataFileList (in target 'mips-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips-softmmu.build/Release-iphoneos/mips-softmmu.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips-softmmu.build/Release-iphoneos/Objects-normal/arm64/mips-softmmu.LinkFileList (in target 'mips-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips-softmmu.build/Release-iphoneos/Objects-normal/arm64/mips-softmmu.LinkFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp (in target 'mips-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
--fpascal-strings -O3 '-DCMAKE_INTDIR="Release-iphoneos"' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips-softmmu.build/Release-iphoneos/DerivedSources-normal/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips-softmmu.build/Release-iphoneos/DerivedSources/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/mips-softmmu.build/Release-iphoneos/DerivedSources -F/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos -DNDEBUG '-std=gnu11' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE '-D_FILE_OFFSET_BITS=64' -D_LARGEFILE_SOURCE -fPIC -DNEED_CPU_H -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/mips-softmmu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/mips
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/m68k-softmmu.build/Release-iphoneos/m68k-softmmu.DependencyStaticMetadataFileList (in target 'm68k-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/m68k-softmmu.build/Release-iphoneos/m68k-softmmu.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/m68k-softmmu.build/Release-iphoneos/m68k-softmmu.DependencyMetadataFileList (in target 'm68k-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/m68k-softmmu.build/Release-iphoneos/m68k-softmmu.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/m68k-softmmu.build/Release-iphoneos/Objects-normal/arm64/m68k-softmmu.LinkFileList (in target 'm68k-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/m68k-softmmu.build/Release-iphoneos/Objects-normal/arm64/m68k-softmmu.LinkFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/m68k-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp (in target 'm68k-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/m68k-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
--fpascal-strings -O3 '-DCMAKE_INTDIR="Release-iphoneos"' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/m68k-softmmu.build/Release-iphoneos/DerivedSources-normal/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/m68k-softmmu.build/Release-iphoneos/DerivedSources/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/m68k-softmmu.build/Release-iphoneos/DerivedSources -F/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos -DNDEBUG '-std=gnu11' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE '-D_FILE_OFFSET_BITS=64' -D_LARGEFILE_SOURCE -fPIC -DNEED_CPU_H -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/m68k-softmmu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/m68k
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/arm-softmmu.build/Release-iphoneos/arm-softmmu.DependencyStaticMetadataFileList (in target 'arm-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/arm-softmmu.build/Release-iphoneos/arm-softmmu.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/arm-softmmu.build/Release-iphoneos/arm-softmmu.DependencyMetadataFileList (in target 'arm-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/arm-softmmu.build/Release-iphoneos/arm-softmmu.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/arm-softmmu.build/Release-iphoneos/Objects-normal/arm64/arm-softmmu.LinkFileList (in target 'arm-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/arm-softmmu.build/Release-iphoneos/Objects-normal/arm64/arm-softmmu.LinkFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/arm-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp (in target 'arm-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/arm-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
--fpascal-strings -O3 '-DCMAKE_INTDIR="Release-iphoneos"' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/arm-softmmu.build/Release-iphoneos/DerivedSources-normal/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/arm-softmmu.build/Release-iphoneos/DerivedSources/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/arm-softmmu.build/Release-iphoneos/DerivedSources -F/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos -DNDEBUG '-std=gnu11' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE '-D_FILE_OFFSET_BITS=64' -D_LARGEFILE_SOURCE -fPIC -DNEED_CPU_H -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/arm-softmmu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/arm
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/aarch64-softmmu.build/Release-iphoneos/aarch64-softmmu.DependencyStaticMetadataFileList (in target 'aarch64-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/aarch64-softmmu.build/Release-iphoneos/aarch64-softmmu.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/aarch64-softmmu.build/Release-iphoneos/aarch64-softmmu.DependencyMetadataFileList (in target 'aarch64-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/aarch64-softmmu.build/Release-iphoneos/aarch64-softmmu.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/aarch64-softmmu.build/Release-iphoneos/Objects-normal/arm64/aarch64-softmmu.LinkFileList (in target 'aarch64-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/aarch64-softmmu.build/Release-iphoneos/Objects-normal/arm64/aarch64-softmmu.LinkFileList
-
-WriteAuxiliaryFile /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/aarch64-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp (in target 'aarch64-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    write-file /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/aarch64-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
--fpascal-strings -O3 '-DCMAKE_INTDIR="Release-iphoneos"' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/aarch64-softmmu.build/Release-iphoneos/DerivedSources-normal/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/aarch64-softmmu.build/Release-iphoneos/DerivedSources/arm64 -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/aarch64-softmmu.build/Release-iphoneos/DerivedSources -F/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/Release-iphoneos -DNDEBUG '-std=gnu11' -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE '-D_FILE_OFFSET_BITS=64' -D_LARGEFILE_SOURCE -fPIC -DNEED_CPU_H -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/aarch64-softmmu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/arm
-CompileC /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/xsave_helper.o /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/xsave_helper.c normal arm64 c com.apple.compilers.llvm.clang.1_0.compiler (in target 'x86_64-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    
-    Using response file: /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
-    
-    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -ivfsstatcache /var/folders/df/djsxfhc17x95674wsm_g8s980000gn/C/com.apple.DeveloperTools/26.6-17F113/Xcode/SDKStatCaches.noindex/iphoneos26.5-23F81a-688ef53f1462e2c8f657fdc38a81448fee66e23052a0157c865c76b268046726.sdkstatcache -target arm64-apple-ios26.5 -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-implicit-fallthrough -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -fstrict-aliasing -Wdeprecated-declarations -Wno-sign-conversion -Wno-infinite-recursion -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-semicolon-before-method-body -Wall -Wno-missing-braces -include x86_64.h @/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp -MMD -MT dependencies -MF /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/xsave_helper.d --serialize-diagnostics /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/xsave_helper.dia -c /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/xsave_helper.c -o /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/xsave_helper.o
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/xsave_helper.c:5:
-/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:32:10: fatal error: 'config-target.h' file not found
-   32 | #include "config-target.h"
-      |          ^~~~~~~~~~~~~~~~~
+[1/602] Building C object CMakeFiles/unicorn-common.dir/glib_compat/gtestutils.c.o
+[2/602] Building C object CMakeFiles/unicorn-common.dir/list.c.o
+[3/602] Building C object CMakeFiles/unicorn-common.dir/glib_compat/gtree.c.o
+[4/602] Building C object CMakeFiles/unicorn-common.dir/glib_compat/glib_compat.c.o
+[5/602] Building C object CMakeFiles/unicorn-common.dir/glib_compat/garray.c.o
+[6/602] Building C object CMakeFiles/unicorn-common.dir/glib_compat/glist.c.o
+[7/602] Building C object CMakeFiles/unicorn-common.dir/glib_compat/grand.c.o
+[8/602] Building C object CMakeFiles/unicorn-common.dir/glib_compat/gpattern.c.o
+[9/602] Building C object CMakeFiles/unicorn-common.dir/glib_compat/gslice.c.o
+[10/602] Building C object CMakeFiles/unicorn-common.dir/glib_compat/gmem.c.o
+[11/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/cutils.c.o
+[12/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/crc32c.c.o
+[13/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/getauxval.c.o
+[14/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/bitmap.c.o
+[15/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/bitops.c.o
+[16/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/guest-random.c.o
+[17/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/host-utils.c.o
+[18/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/osdep.c.o
+[19/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/qemu-timer-common.c.o
+[20/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/range.c.o
+[21/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/qdist.c.o
+[22/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/qemu-timer.c.o
+[23/602] Building C object CMakeFiles/unicorn-common.dir/qemu/crypto/aes.c.o
+[24/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/qht.c.o
+[25/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/cacheinfo.c.o
+[26/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/qemu-thread-posix.c.o
+[27/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/pagesize.c.o
+[28/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/oslib-posix.c.o
+[29/602] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/exec-vary.c.o
+FAILED: [code=1] CMakeFiles/x86_64-softmmu.dir/qemu/exec-vary.c.o 
+/usr/bin/cc  -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -std=gnu11 -arch arm64 -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wall -fPIC -Wno-missing-braces -DNEED_CPU_H -include x86_64.h -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/x86_64-softmmu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386 -MD -MT CMakeFiles/x86_64-softmmu.dir/qemu/exec-vary.c.o -MF CMakeFiles/x86_64-softmmu.dir/qemu/exec-vary.c.o.d -o CMakeFiles/x86_64-softmmu.dir/qemu/exec-vary.c.o -c /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/exec-vary.c
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/exec-vary.c:25:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/exec/exec-all.h:25:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/exec/cpu_ldst.h:90:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/tcg/tcg.h:35:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/tcg/tcg-apple-jit.h:112:12: error: 'pthread_jit_write_protect_np' is unavailable: not available on iOS
+  112 |     return pthread_jit_write_protect_np(enabled);
+      |            ^
+/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk/usr/include/pthread.h:588:6: note: 'pthread_jit_write_protect_np' has been explicitly marked unavailable here
+  588 | void pthread_jit_write_protect_np(int enabled);
+      |      ^
 1 error generated.
-
-CompileC /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/x86.o /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/hw/i386/x86.c normal arm64 c com.apple.compilers.llvm.clang.1_0.compiler (in target 'x86_64-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    
-    Using response file: /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
-    
-    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -ivfsstatcache /var/folders/df/djsxfhc17x95674wsm_g8s980000gn/C/com.apple.DeveloperTools/26.6-17F113/Xcode/SDKStatCaches.noindex/iphoneos26.5-23F81a-688ef53f1462e2c8f657fdc38a81448fee66e23052a0157c865c76b268046726.sdkstatcache -target arm64-apple-ios26.5 -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-implicit-fallthrough -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -fstrict-aliasing -Wdeprecated-declarations -Wno-sign-conversion -Wno-infinite-recursion -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-semicolon-before-method-body -Wall -Wno-missing-braces -include x86_64.h @/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp -MMD -MT dependencies -MF /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/x86.d --serialize-diagnostics /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/x86.dia -c /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/hw/i386/x86.c -o /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/x86.o
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/hw/i386/x86.c:29:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/cpu.h:24:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/cpu-qom.h:23:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/hw/core/cpu.h:26:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/bitmap.h:16:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/bitops.h:16:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/host-utils.h:29:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/bswap.h:4:
-/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:32:10: fatal error: 'config-target.h' file not found
-   32 | #include "config-target.h"
-      |          ^~~~~~~~~~~~~~~~~
+[30/602] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/exec.c.o
+FAILED: [code=1] CMakeFiles/x86_64-softmmu.dir/qemu/exec.c.o 
+/usr/bin/cc  -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -std=gnu11 -arch arm64 -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wall -fPIC -Wno-missing-braces -DNEED_CPU_H -include x86_64.h -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/x86_64-softmmu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386 -MD -MT CMakeFiles/x86_64-softmmu.dir/qemu/exec.c.o -MF CMakeFiles/x86_64-softmmu.dir/qemu/exec.c.o.d -o CMakeFiles/x86_64-softmmu.dir/qemu/exec.c.o -c /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/exec.c
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/exec.c:26:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/exec/exec-all.h:25:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/exec/cpu_ldst.h:90:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/tcg/tcg.h:35:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/tcg/tcg-apple-jit.h:112:12: error: 'pthread_jit_write_protect_np' is unavailable: not available on iOS
+  112 |     return pthread_jit_write_protect_np(enabled);
+      |            ^
+/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk/usr/include/pthread.h:588:6: note: 'pthread_jit_write_protect_np' has been explicitly marked unavailable here
+  588 | void pthread_jit_write_protect_np(int enabled);
+      |      ^
 1 error generated.
-
-CompileC /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/unicorn_vtlb.o /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/softmmu/unicorn_vtlb.c normal arm64 c com.apple.compilers.llvm.clang.1_0.compiler (in target 'x86_64-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    
-    Using response file: /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
-    
-    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -ivfsstatcache /var/folders/df/djsxfhc17x95674wsm_g8s980000gn/C/com.apple.DeveloperTools/26.6-17F113/Xcode/SDKStatCaches.noindex/iphoneos26.5-23F81a-688ef53f1462e2c8f657fdc38a81448fee66e23052a0157c865c76b268046726.sdkstatcache -target arm64-apple-ios26.5 -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-implicit-fallthrough -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -fstrict-aliasing -Wdeprecated-declarations -Wno-sign-conversion -Wno-infinite-recursion -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-semicolon-before-method-body -Wall -Wno-missing-braces -include x86_64.h @/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp -MMD -MT dependencies -MF /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/unicorn_vtlb.d --serialize-diagnostics /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/unicorn_vtlb.dia -c /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/softmmu/unicorn_vtlb.c -o /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/unicorn_vtlb.o
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/softmmu/unicorn_vtlb.c:2:
-/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:32:10: fatal error: 'config-target.h' file not found
-   32 | #include "config-target.h"
-      |          ^~~~~~~~~~~~~~~~~
-
-CompileC /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/unicorn.o /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/unicorn.c normal arm64 c com.apple.compilers.llvm.clang.1_0.compiler (in target 'x86_64-softmmu' from project 'unicorn')
-    cd /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn
-    
-    Using response file: /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
-    
-    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -ivfsstatcache /var/folders/df/djsxfhc17x95674wsm_g8s980000gn/C/com.apple.DeveloperTools/26.6-17F113/Xcode/SDKStatCaches.noindex/iphoneos26.5-23F81a-688ef53f1462e2c8f657fdc38a81448fee66e23052a0157c865c76b268046726.sdkstatcache -target arm64-apple-ios26.5 -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-implicit-fallthrough -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -fstrict-aliasing -Wdeprecated-declarations -Wno-sign-conversion -Wno-infinite-recursion -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-semicolon-before-method-body -Wall -Wno-missing-braces -include x86_64.h @/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp -MMD -MT dependencies -MF /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/unicorn.d --serialize-diagnostics /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/unicorn.dia -c /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/unicorn.c -o /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/unicorn.o
-
-note: Run script build phase 'Generate CMakeFiles/ZERO_CHECK' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'ZERO_CHECK' from project 'unicorn')
-note: Run script build phase 'Generate CMakeFiles/ALL_BUILD' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'ALL_BUILD' from project 'unicorn')
-note: Run script build phase 'CMake PostBuild Rules' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'unicorn_archive' from project 'unicorn')
-** BUILD FAILED **
-
-
-The following build commands failed:
-	CompileC /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/xsave_helper.o /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/xsave_helper.c normal arm64 c com.apple.compilers.llvm.clang.1_0.compiler (in target 'x86_64-softmmu' from project 'unicorn')
-	CompileC /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/build/x86_64-softmmu.build/Release-iphoneos/Objects-normal/arm64/x86.o /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/hw/i386/x86.c normal arm64 c com.apple.compilers.llvm.clang.1_0.compiler (in target 'x86_64-softmmu' from project 'unicorn')
-(2 failures)
+[31/602] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/cpus.c.o
+FAILED: [code=1] CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/cpus.c.o 
+/usr/bin/cc  -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -std=gnu11 -arch arm64 -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wall -fPIC -Wno-missing-braces -DNEED_CPU_H -include x86_64.h -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/x86_64-softmmu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386 -MD -MT CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/cpus.c.o -MF CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/cpus.c.o.d -o CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/cpus.c.o -c /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/softmmu/cpus.c
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/softmmu/cpus.c:28:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/tcg/tcg.h:35:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/tcg/tcg-apple-jit.h:112:12: error: 'pthread_jit_write_protect_np' is unavailable: not available on iOS
+  112 |     return pthread_jit_write_protect_np(enabled);
+      |            ^
+/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk/usr/include/pthread.h:588:6: note: 'pthread_jit_write_protect_np' has been explicitly marked unavailable here
+  588 | void pthread_jit_write_protect_np(int enabled);
+      |      ^
+1 error generated.
+[32/602] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/ioport.c.o
+FAILED: [code=1] CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/ioport.c.o 
+/usr/bin/cc  -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -std=gnu11 -arch arm64 -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wall -fPIC -Wno-missing-braces -DNEED_CPU_H -include x86_64.h -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/x86_64-softmmu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386 -MD -MT CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/ioport.c.o -MF CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/ioport.c.o.d -o CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/ioport.c.o -c /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/softmmu/ioport.c
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/softmmu/ioport.c:31:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/exec/exec-all.h:25:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/exec/cpu_ldst.h:90:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/tcg/tcg.h:35:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/tcg/tcg-apple-jit.h:112:12: error: 'pthread_jit_write_protect_np' is unavailable: not available on iOS
+  112 |     return pthread_jit_write_protect_np(enabled);
+      |            ^
+/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk/usr/include/pthread.h:588:6: note: 'pthread_jit_write_protect_np' has been explicitly marked unavailable here
+  588 | void pthread_jit_write_protect_np(int enabled);
+      |      ^
+1 error generated.
+[33/602] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/memory.c.o
+FAILED: [code=1] CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/memory.c.o 
+/usr/bin/cc  -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -std=gnu11 -arch arm64 -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wall -fPIC -Wno-missing-braces -DNEED_CPU_H -include x86_64.h -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/x86_64-softmmu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386 -MD -MT CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/memory.c.o -MF CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/memory.c.o.d -o CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/memory.c.o -c /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/softmmu/memory.c
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/softmmu/memory.c:24:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/exec/exec-all.h:25:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/exec/cpu_ldst.h:90:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/tcg/tcg.h:35:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/tcg/tcg-apple-jit.h:112:12: error: 'pthread_jit_write_protect_np' is unavailable: not available on iOS
+  112 |     return pthread_jit_write_protect_np(enabled);
+      |            ^
+/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk/usr/include/pthread.h:588:6: note: 'pthread_jit_write_protect_np' has been explicitly marked unavailable here
+  588 | void pthread_jit_write_protect_np(int enabled);
+      |      ^
+1 error generated.
+ninja: build stopped: subcommand failed.
