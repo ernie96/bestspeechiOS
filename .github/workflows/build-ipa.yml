@@ -24,34 +24,13 @@ jobs:
 
       - name: Build unicorn for iOS
         run: |
-          cat << 'EOF' > patch_jit.sh
-          #!/bin/bash
-          FILES=(
-            "third_party/unicorn/qemu/include/tcg/tcg-apple-jit.h"
-            "third_party/unicorn/qemu/include/qemu/osdep.h"
-            "third_party/unicorn/qemu/accel/tcg/translate-all.c"
-            "third_party/unicorn/uc.c"
-          )
-          for f in "${FILES[@]}"; do
-            if [ -f "$f" ]; then
-              cat "$f" | sed 's/pthread_jit_write_protect_np/(void)/g' > "$f.tmp"
-              mv "$f.tmp" "$f"
-            fi
-          done
-          EOF
-          chmod +x patch_jit.sh
-          
-          # Patch BEFORE cmake
-          ./patch_jit.sh
+          # Redefine the unavailable JIT APIs in the most widely included header
+          echo "#define pthread_jit_write_protect_supported_np() 0" >> third_party/unicorn/qemu/include/qemu/osdep.h
+          echo "#define pthread_jit_write_protect_np(x) (void)(x)" >> third_party/unicorn/qemu/include/qemu/osdep.h
           
           mkdir -p third_party/unicorn/build-ios
           cd third_party/unicorn/build-ios
           cmake .. -G Ninja -DCMAKE_TOOLCHAIN_FILE=../../ios.toolchain.cmake -DPLATFORM=OS64 -DBUILD_SHARED_LIBS=OFF -DUNICORN_BUILD_TESTS=OFF > unicorn_build.log 2>&1
-          
-          # Patch AFTER cmake
-          cd ../../..
-          ./patch_jit.sh
-          cd third_party/unicorn/build-ios
           
           cmake --build . --config Release >> unicorn_build.log 2>&1 || (cat unicorn_build.log && exit 1)
 
