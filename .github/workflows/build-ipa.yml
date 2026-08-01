@@ -1,0 +1,71 @@
+name: Build iOS IPA
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install dependencies
+        run: |
+          brew install xcodegen cmake ninja
+
+      - name: Create Dummy ios.toolchain.cmake (Fallback if needed)
+        run: |
+          # If a proper ios.toolchain.cmake isn't provided, this creates a simple one
+          cat << 'EOF' > ios.toolchain.cmake
+          set(CMAKE_SYSTEM_NAME iOS)
+          set(CMAKE_OSX_SYSROOT iphoneos)
+          set(CMAKE_OSX_ARCHITECTURES arm64)
+          EOF
+
+      - name: Build unicorn for iOS
+        run: |
+          mkdir -p third_party/unicorn/build-ios
+          cd third_party/unicorn/build-ios
+          cmake .. -G Ninja -DCMAKE_TOOLCHAIN_FILE=../../ios.toolchain.cmake -DPLATFORM=OS64 -DUNICORN_ARCH=x86 -DBUILD_SHARED_LIBS=OFF -DUNICORN_BUILD_TESTS=OFF -DCMAKE_BUILD_TYPE=Release
+          cmake --build .
+
+      - name: Generate Xcode Project
+        run: |
+          cd ios
+          xcodegen
+
+      - name: Build with xcodebuild
+        run: |
+          cd ios
+          xcodebuild clean build \
+            -project BestSpeech.xcodeproj \
+            -scheme SampleTTSApp \
+            -configuration Release \
+            -sdk iphoneos \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY=""
+
+      - name: Package Payload and Create IPA
+        run: |
+          cd ios/build/Build/Products/Release-iphoneos
+          mkdir -p Payload
+          cp -R BestSpeech.app Payload/
+          
+          # CRITICAL STEP: Delete old IPA before zipping to prevent merged/corrupted archives
+          rm -f BestSpeech.ipa
+          
+          # Zip into .ipa
+          zip -r BestSpeech.ipa Payload
+          echo "IPA created successfully"
+
+      - name: Upload IPA Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: BestSpeech-iOS-IPA
+          path: ios/build/Build/Products/Release-iphoneos/BestSpeech.ipa
