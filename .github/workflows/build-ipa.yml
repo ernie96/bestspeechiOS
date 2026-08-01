@@ -21,10 +21,9 @@ jobs:
 
       - name: Patch unicorn for iOS
         run: |
-          # Disable macOS JIT API calls which are unavailable on iOS using perl for reliability
-          perl -pi -e 's/defined\s*\(\s*HAVE_PTHREAD_JIT_PROTECT\s*\)/0/g' third_party/unicorn/qemu/include/tcg/tcg-apple-jit.h || true
-          perl -pi -e 's/defined\s*\(\s*HAVE_PTHREAD_JIT_PROTECT\s*\)/0/g' third_party/unicorn/qemu/include/qemu/osdep.h || true
-          perl -pi -e 's/have_pthread_jit_protect="yes"/have_pthread_jit_protect="no"/g' third_party/unicorn/qemu/configure || true
+          # Disable macOS JIT API calls which are unavailable on iOS
+          sed -i '' "s/have_pthread_jit_protect='yes'/have_pthread_jit_protect='no'/g" third_party/unicorn/qemu/configure
+          find third_party/unicorn/qemu/include -type f -name "*.h" -exec sed -i '' "s/defined(HAVE_PTHREAD_JIT_PROTECT)/0/g" {} +
 
       - name: Download iOS CMake Toolchain
         run: curl -O https://raw.githubusercontent.com/leetal/ios-cmake/master/ios.toolchain.cmake
