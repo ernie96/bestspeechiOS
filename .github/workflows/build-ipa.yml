@@ -19,19 +19,29 @@ jobs:
         run: |
           brew install xcodegen cmake ninja
 
-      - name: Patch unicorn for iOS
-        run: |
-          # Brute-force remove macOS JIT API calls which are unavailable on iOS
-          find third_party/unicorn -type f \( -name "*.c" -o -name "*.h" \) -exec sed -i '' 's/pthread_jit_write_protect_np/(void)/g' {} +
-
       - name: Download iOS CMake Toolchain
         run: curl -O https://raw.githubusercontent.com/leetal/ios-cmake/master/ios.toolchain.cmake
 
       - name: Build unicorn for iOS
         run: |
+          # Patch BEFORE cmake
+          sed -i '' 's/pthread_jit_write_protect_np/(void)/g' third_party/unicorn/qemu/include/tcg/tcg-apple-jit.h || true
+          sed -i '' 's/pthread_jit_write_protect_np/(void)/g' third_party/unicorn/qemu/include/qemu/osdep.h || true
+          sed -i '' 's/pthread_jit_write_protect_np/(void)/g' third_party/unicorn/qemu/accel/tcg/translate-all.c || true
+          sed -i '' 's/pthread_jit_write_protect_np/(void)/g' third_party/unicorn/uc.c || true
+          
           mkdir -p third_party/unicorn/build-ios
           cd third_party/unicorn/build-ios
           cmake .. -G Ninja -DCMAKE_TOOLCHAIN_FILE=../../ios.toolchain.cmake -DPLATFORM=OS64 -DBUILD_SHARED_LIBS=OFF -DUNICORN_BUILD_TESTS=OFF > unicorn_build.log 2>&1
+          
+          # Patch AFTER cmake
+          cd ../../..
+          sed -i '' 's/pthread_jit_write_protect_np/(void)/g' third_party/unicorn/qemu/include/tcg/tcg-apple-jit.h || true
+          sed -i '' 's/pthread_jit_write_protect_np/(void)/g' third_party/unicorn/qemu/include/qemu/osdep.h || true
+          sed -i '' 's/pthread_jit_write_protect_np/(void)/g' third_party/unicorn/qemu/accel/tcg/translate-all.c || true
+          sed -i '' 's/pthread_jit_write_protect_np/(void)/g' third_party/unicorn/uc.c || true
+          cd third_party/unicorn/build-ios
+          
           cmake --build . --config Release >> unicorn_build.log 2>&1 || (cat unicorn_build.log && exit 1)
 
       - name: Upload Logs on Failure
