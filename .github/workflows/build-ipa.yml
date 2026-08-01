@@ -21,10 +21,12 @@ jobs:
 
       - name: Build unicorn for iOS
         run: |
+          # Disable macOS JIT API calls which are unavailable on iOS
+          find third_party/unicorn -type f \( -name "*.c" -o -name "*.h" \) -exec sed -i '' 's/HAVE_PTHREAD_JIT_PROTECT/DISABLED_JIT/g' {} +
           mkdir -p third_party/unicorn/build-ios
           cd third_party/unicorn/build-ios
-          cmake .. -G Ninja -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_SYSROOT=iphoneos -DCMAKE_OSX_ARCHITECTURES=arm64 -DBUILD_SHARED_LIBS=OFF -DUNICORN_BUILD_TESTS=OFF > unicorn_build.log 2>&1
-          cmake --build . --config Release >> unicorn_build.log 2>&1 || (cat unicorn_build.log && exit 1)
+          cmake .. -G "Unix Makefiles" -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_SYSROOT=iphoneos -DCMAKE_OSX_ARCHITECTURES=arm64 -DBUILD_SHARED_LIBS=OFF -DUNICORN_BUILD_TESTS=OFF > unicorn_build.log 2>&1
+          cmake --build . --config Release -j4 >> unicorn_build.log 2>&1 || (cat unicorn_build.log && exit 1)
 
       - name: Upload Logs on Failure
         if: failure()
