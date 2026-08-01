@@ -19,14 +19,22 @@ jobs:
         run: |
           brew install xcodegen cmake ninja
 
+      - name: Patch unicorn for iOS
+        run: |
+          # Disable macOS JIT API calls which are unavailable on iOS using perl for reliability
+          perl -pi -e 's/defined\s*\(\s*HAVE_PTHREAD_JIT_PROTECT\s*\)/0/g' third_party/unicorn/qemu/include/tcg/tcg-apple-jit.h || true
+          perl -pi -e 's/defined\s*\(\s*HAVE_PTHREAD_JIT_PROTECT\s*\)/0/g' third_party/unicorn/qemu/include/qemu/osdep.h || true
+          perl -pi -e 's/have_pthread_jit_protect="yes"/have_pthread_jit_protect="no"/g' third_party/unicorn/qemu/configure || true
+
+      - name: Download iOS CMake Toolchain
+        run: curl -O https://raw.githubusercontent.com/leetal/ios-cmake/master/ios.toolchain.cmake
+
       - name: Build unicorn for iOS
         run: |
-          # Disable macOS JIT API calls which are unavailable on iOS
-          find third_party/unicorn -type f \( -name "*.c" -o -name "*.h" \) -exec sed -i '' 's/HAVE_PTHREAD_JIT_PROTECT/DISABLED_JIT/g' {} +
           mkdir -p third_party/unicorn/build-ios
           cd third_party/unicorn/build-ios
-          cmake .. -G "Unix Makefiles" -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_SYSROOT=iphoneos -DCMAKE_OSX_ARCHITECTURES=arm64 -DBUILD_SHARED_LIBS=OFF -DUNICORN_BUILD_TESTS=OFF > unicorn_build.log 2>&1
-          cmake --build . --config Release -j4 >> unicorn_build.log 2>&1 || (cat unicorn_build.log && exit 1)
+          cmake .. -G Ninja -DCMAKE_TOOLCHAIN_FILE=../../ios.toolchain.cmake -DPLATFORM=OS64 -DBUILD_SHARED_LIBS=OFF -DUNICORN_BUILD_TESTS=OFF > unicorn_build.log 2>&1
+          cmake --build . --config Release >> unicorn_build.log 2>&1 || (cat unicorn_build.log && exit 1)
 
       - name: Upload Logs on Failure
         if: failure()
