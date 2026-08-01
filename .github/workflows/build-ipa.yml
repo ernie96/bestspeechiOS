@@ -23,7 +23,7 @@ jobs:
         run: |
           mkdir -p third_party/unicorn/build-ios
           cd third_party/unicorn/build-ios
-          cmake .. -G Xcode -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_SYSROOT=iphoneos -DCMAKE_OSX_ARCHITECTURES=arm64 -DBUILD_SHARED_LIBS=OFF -DUNICORN_BUILD_TESTS=OFF > unicorn_build.log 2>&1
+          cmake .. -G Ninja -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_SYSROOT=iphoneos -DCMAKE_OSX_ARCHITECTURES=arm64 -DBUILD_SHARED_LIBS=OFF -DUNICORN_BUILD_TESTS=OFF > unicorn_build.log 2>&1
           cmake --build . --config Release >> unicorn_build.log 2>&1 || (cat unicorn_build.log && exit 1)
 
       - name: Upload Logs on Failure
