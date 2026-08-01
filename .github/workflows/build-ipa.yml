@@ -21,8 +21,19 @@ jobs:
         run: |
           mkdir -p third_party/unicorn/build-ios
           cd third_party/unicorn/build-ios
-          cmake .. -G Xcode -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_SYSROOT=iphoneos -DCMAKE_OSX_ARCHITECTURES=arm64 -DBUILD_SHARED_LIBS=OFF -DUNICORN_BUILD_TESTS=OFF
-          cmake --build . --config Release
+          cmake .. -G Xcode -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_SYSROOT=iphoneos -DCMAKE_OSX_ARCHITECTURES=arm64 -DBUILD_SHARED_LIBS=OFF -DUNICORN_BUILD_TESTS=OFF > unicorn_build.log 2>&1
+          cmake --build . --config Release >> unicorn_build.log 2>&1 || (cat unicorn_build.log && exit 1)
+
+      - name: Upload Logs on Failure
+        if: failure()
+        run: |
+          cp third_party/unicorn/build-ios/unicorn_build.log unicorn_error.txt || echo "No log found" > unicorn_error.txt
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add unicorn_error.txt
+          git commit -m "CI: unicorn_error.txt" || true
+          git pull --rebase origin main || true
+          git push origin HEAD:main || true
 
       - name: Generate Xcode Project
         run: |
