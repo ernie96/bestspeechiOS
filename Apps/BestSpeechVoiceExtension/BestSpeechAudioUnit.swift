@@ -96,8 +96,16 @@ public class SpeechSynthesizer: AVSpeechSynthesisProviderAudioUnit {
     }
     
     public override func synthesizeSpeechRequest(_ request: AVSpeechSynthesisProviderRequest) {
-        // Strip SSML tags simply for now, just to get text. Or just use the SSML text and remove XML.
-        // A robust parser would extract <prosody rate="..."> etc.
+        let settings = BestSpeechSettingsStore.load()
+        ttsEngine?.setSpeed(settings.rate)
+        ttsEngine?.setPitch(settings.pitch)
+        ttsEngine?.setVoice(
+            inflection: settings.inflection,
+            headSize: settings.headSize,
+            excitation: settings.excitation,
+            unvoiced: settings.unvoiced
+        )
+
         let text = request.ssmlRepresentation.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
         
         // Call engine

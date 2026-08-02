@@ -71,6 +71,8 @@ jobs:
             -import-objc-header Apps/BestSpeechApp/BestSpeechApp-Bridging-Header.h \
             CBestSpeech.o third_party/unicorn/build-ios/libunicorn.a \
             Sources/BestSpeechKit/BestSpeechSynthesizer.swift \
+            Sources/BestSpeechKit/BestSpeechSettings.swift \
+            Sources/BestSpeechKit/BestSpeechSettingsStore.swift \
             Apps/BestSpeechApp/BestSpeechApp.swift \
             Apps/BestSpeechApp/ContentView.swift \
             -o BestSpeechAppExec > swiftc_app_build.log 2>&1 || (cat swiftc_app_build.log && exit 1)
@@ -96,6 +98,8 @@ jobs:
             -import-objc-header Apps/BestSpeechVoiceExtension/BestSpeechVoiceExtension-Bridging-Header.h \
             CBestSpeech.o third_party/unicorn/build-ios/libunicorn.a \
             Sources/BestSpeechKit/BestSpeechSynthesizer.swift \
+            Sources/BestSpeechKit/BestSpeechSettings.swift \
+            Sources/BestSpeechKit/BestSpeechSettingsStore.swift \
             Apps/BestSpeechVoiceExtension/BestSpeechAudioUnit.swift \
             -o BestSpeechVoiceExtensionExec > swiftc_ext_build.log 2>&1 || (cat swiftc_ext_build.log && exit 1)
 
