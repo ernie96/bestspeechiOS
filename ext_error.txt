@@ -1,1 +1,4 @@
-No ext log
+Apps/BestSpeechVoiceExtension/BestSpeechAudioUnit.swift:4:8: error: no such module 'BestSpeechKit'
+import BestSpeechKit
+       ^
+error: fatalError
