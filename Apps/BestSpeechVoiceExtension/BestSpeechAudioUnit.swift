@@ -37,9 +37,47 @@ public class SpeechSynthesizer: AVSpeechSynthesisProviderAudioUnit {
         outputBus = try AUAudioUnitBus(format: format)
         outputBusArray = AUAudioUnitBusArray(audioUnit: self, busType: .output, busses: [outputBus])
         
-        // Load DLL from shared container
-        if let appGroupURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.bestspeech") {
-            let dllURL = appGroupURL.appendingPathComponent("B32_TTS.DLL")
+        // Locate DLL from bundle, App Group container, or current directory
+        var resolvedDLLURL: URL? = nil
+        let possibleNames = ["b32_tts.dll", "B32_TTS.DLL", "b32_tts", "B32_TTS"]
+        
+        // 1. Search in Extension bundle
+        let extBundle = Bundle(for: SpeechSynthesizer.self)
+        for name in ["b32_tts.dll", "B32_TTS.DLL"] {
+            if let path = extBundle.path(forResource: name, ofType: nil) {
+                resolvedDLLURL = URL(fileURLWithPath: path)
+                break
+            }
+            let directUrl = extBundle.bundleURL.appendingPathComponent(name)
+            if FileManager.default.fileExists(atPath: directUrl.path) {
+                resolvedDLLURL = directUrl
+                break
+            }
+        }
+        
+        // 2. Search in App Group container
+        if resolvedDLLURL == nil, let appGroupURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.bestspeech") {
+            for name in ["b32_tts.dll", "B32_TTS.DLL"] {
+                let candidate = appGroupURL.appendingPathComponent(name)
+                if FileManager.default.fileExists(atPath: candidate.path) {
+                    resolvedDLLURL = candidate
+                    break
+                }
+            }
+        }
+        
+        // 3. Search in Main Bundle
+        if resolvedDLLURL == nil {
+            for name in ["b32_tts.dll", "B32_TTS.DLL"] {
+                let candidate = Bundle.main.bundleURL.appendingPathComponent(name)
+                if FileManager.default.fileExists(atPath: candidate.path) {
+                    resolvedDLLURL = candidate
+                    break
+                }
+            }
+        }
+        
+        if let dllURL = resolvedDLLURL {
             ttsEngine = BestSpeechSynthesizer(dllPath: dllURL)
             // Configure defaults
             ttsEngine?.setSpeed(1.0)

@@ -108,11 +108,15 @@ jobs:
           chmod +x Payload/BestSpeechApp.app/BestSpeechApp
           cp Apps/BestSpeechApp/Info.plist Payload/BestSpeechApp.app/Info.plist
           printf "APPL????" > Payload/BestSpeechApp.app/PkgInfo
+          if [ -f b32_tts.dll ]; then cp b32_tts.dll Payload/BestSpeechApp.app/; fi
+          if [ -f B32_TTS.DLL ]; then cp B32_TTS.DLL Payload/BestSpeechApp.app/; fi
 
           # Assemble Voice Extension bundle
           cp BestSpeechVoiceExtensionExec Payload/BestSpeechApp.app/PlugIns/BestSpeechVoiceExtension.appex/BestSpeechVoiceExtension
           chmod +x Payload/BestSpeechApp.app/PlugIns/BestSpeechVoiceExtension.appex/BestSpeechVoiceExtension
           cp Apps/BestSpeechVoiceExtension/Info.plist Payload/BestSpeechApp.app/PlugIns/BestSpeechVoiceExtension.appex/Info.plist
+          if [ -f b32_tts.dll ]; then cp b32_tts.dll Payload/BestSpeechApp.app/PlugIns/BestSpeechVoiceExtension.appex/; fi
+          if [ -f B32_TTS.DLL ]; then cp B32_TTS.DLL Payload/BestSpeechApp.app/PlugIns/BestSpeechVoiceExtension.appex/; fi
 
           # Ad-hoc sign both binaries
           codesign -s - --force Payload/BestSpeechApp.app/PlugIns/BestSpeechVoiceExtension.appex
