@@ -1,7 +1,7 @@
 import Foundation
 import AVFoundation
 import CoreAudioKit
-import BestSpeechKit
+
 
 @objc(SpeechSynthesizerFactory)
 public class SpeechSynthesizerFactory: NSObject, AUAudioUnitFactory {
