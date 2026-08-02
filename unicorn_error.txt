@@ -1,316 +1,249 @@
-CMake Warning (deprecated) at /Users/runner/work/bestspeechiOS/bestspeechiOS/ios.toolchain.cmake:157 (cmake_minimum_required):
-  Compatibility with CMake < 3.10 will be removed from a future version of
-  CMake.
-
-  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
-  to tell CMake that the project requires at least <min> but has been updated
-  to work with policies introduced by <max> or earlier.
-Call Stack (most recent call first):
-  /opt/homebrew/share/cmake/Modules/CMakeDetermineSystem.cmake:158 (include)
-  CMakeLists.txt:60 (project)
-This warning is for project developers.  Use -Wno-author or -Wno-deprecated
-to suppress it.
-
--- [DEFAULTS] Using explicit named language support! E.g., enable_language(CXX) is needed in the project files.
--- [DEFAULTS] Using the default min-version since DEPLOYMENT_TARGET not provided!
--- [DEFAULTS] Disabling bitcode support by default. ENABLE_BITCODE not provided for override!
--- [DEFAULTS] Enabling ARC support by default. ENABLE_ARC not provided!
--- [DEFAULTS] Hiding symbols visibility by default. ENABLE_VISIBILITY not provided!
--- [DEFAULTS] Using NON-strict compiler checks by default. ENABLE_STRICT_TRY_COMPILE not provided!
--- Configuring iphoneos build for platform: OS64, architecture(s): arm64
--- Using SDK: /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk
--- Using C compiler: /usr/bin/cc
--- Using CXX compiler: /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
--- Using libtool: /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool
--- Using install name tool: /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/install_name_tool
--- Autoconf target triple: arm64-apple-ios13.0
--- Using minimum deployment version: 13.0 (SDK version: 26.5)
--- Merging integrated CMake 3.14+ iOS,tvOS,watchOS,macOS toolchain(s) with this toolchain!
--- CMake version: 4.4.0
--- Using a data_ptr size of: 8
--- Bitcode: Disabled
--- ARC: Enabled
--- Hiding symbols: Enabled
-CMake Warning (deprecated) at /Users/runner/work/bestspeechiOS/bestspeechiOS/ios.toolchain.cmake:157 (cmake_minimum_required):
-  Compatibility with CMake < 3.10 will be removed from a future version of
-  CMake.
-
-  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
-  to tell CMake that the project requires at least <min> but has been updated
-  to work with policies introduced by <max> or earlier.
-Call Stack (most recent call first):
-  build-ios/CMakeFiles/4.4.0/CMakeSystem.cmake:6 (include)
-  CMakeLists.txt:60 (project)
-This warning is for project developers.  Use -Wno-author or -Wno-deprecated
-to suppress it.
-
--- Configuring iphoneos build for platform: OS64, architecture(s): arm64
--- Using SDK: /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk
--- Using C compiler: /usr/bin/cc
--- Using CXX compiler: /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
--- Using libtool: /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool
--- Using install name tool: /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/install_name_tool
--- Autoconf target triple: arm64-apple-ios13.0
--- Using minimum deployment version: 13.0 (SDK version: 26.5)
--- Merging integrated CMake 3.14+ iOS,tvOS,watchOS,macOS toolchain(s) with this toolchain!
--- CMake version: 4.4.0
--- Using a data_ptr size of: 8
--- Bitcode: Disabled
--- ARC: Enabled
--- Hiding symbols: Enabled
--- The C compiler identification is AppleClang 21.0.0.21000101
--- Detecting C compiler ABI info
-CMake Warning (deprecated) at /Users/runner/work/bestspeechiOS/bestspeechiOS/ios.toolchain.cmake:157 (cmake_minimum_required):
-  Compatibility with CMake < 3.10 will be removed from a future version of
-  CMake.
-
-  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
-  to tell CMake that the project requires at least <min> but has been updated
-  to work with policies introduced by <max> or earlier.
-Call Stack (most recent call first):
-  /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/CMakeFiles/4.4.0/CMakeSystem.cmake:6 (include)
-  /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/CMakeFiles/CMakeScratch/TryCompile-pixaSU/CMakeLists.txt:4 (project)
-This warning is for project developers.  Use -Wno-author or -Wno-deprecated
-to suppress it.
-
--- Detecting C compiler ABI info - done
--- Check for working C compiler: /usr/bin/cc - skipped
--- Detecting C compile features
--- Detecting C compile features - done
-Disabling PIE due to missing toolchain support
-Install prefix    /usr/local
-binary directory  /usr/local/bin
-library directory /usr/local/lib
-libexec directory /usr/local/libexec
-include directory /usr/local/include
-config directory  /usr/local/etc
-local state directory   /usr/local/var
-ELF interp prefix /usr/gnemul/qemu-%M
-Build directory   /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios
-Source path       /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu
-GIT binary        git
-GIT submodules    
-C compiler        /usr/bin/cc
-Host C compiler   cc
-C++ compiler      c++
-Objective-C compiler clang
-ARFLAGS           rv
-CFLAGS            -g 
-QEMU_CFLAGS        -DOS_OBJECT_USE_OBJC=0 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wall -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -std=gnu99  -DUNICORN_HAS_X86 -DUNICORN_HAS_ARM -DUNICORN_HAS_ARM64 -DUNICORN_HAS_M68K -DUNICORN_HAS_MIPS -DUNICORN_HAS_MIPSEL -DUNICORN_HAS_MIPS64 -DUNICORN_HAS_MIPS64EL -DUNICORN_HAS_SPARC -DUNICORN_HAS_PPC -DUNICORN_HAS_RISCV -DUNICORN_HAS_S390X -DUNICORN_HAS_TRICORE -fPIC -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk  -Wno-string-plus-int -Wno-typedef-redefinition -Wno-initializer-overrides -Wexpansion-to-defined -Wendif-labels -Wno-shift-negative-value -Wno-missing-include-dirs -Wempty-body -Wnested-externs -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wold-style-definition -Wtype-limits -fstack-protector-strong
-QEMU_LDFLAGS      -framework CoreFoundation -framework IOKit  -DUNICORN_HAS_X86 -DUNICORN_HAS_ARM -DUNICORN_HAS_ARM64 -DUNICORN_HAS_M68K -DUNICORN_HAS_MIPS -DUNICORN_HAS_MIPSEL -DUNICORN_HAS_MIPS64 -DUNICORN_HAS_MIPS64EL -DUNICORN_HAS_SPARC -DUNICORN_HAS_PPC -DUNICORN_HAS_RISCV -DUNICORN_HAS_S390X -DUNICORN_HAS_TRICORE -fPIC -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk  -fstack-protector-strong
-make              make
-install           install
-host CPU          aarch64
-host big endian   no
-target list       x86_64-softmmu  arm-softmmu  aarch64-softmmu  m68k-softmmu  mips-softmmu  mipsel-softmmu  mips64-softmmu  mips64el-softmmu  sparc-softmmu  sparc64-softmmu  ppc-softmmu  ppc64-softmmu  riscv32-softmmu  riscv64-softmmu  s390x-softmmu  tricore-softmmu   
-strip binaries    yes
-static build      no
-mingw32 support   no
-PIE               no
-TCG support       yes
-malloc trim support no
-membarrier        no
-madvise           yes
-posix_madvise     yes
-posix_memalign    yes
-debug stack usage no
-tcmalloc support  no
-jemalloc support  no
-avx2 optimization 
-avx512f optimization no
--- Configuring done (17.3s)
--- Generating done (0.1s)
--- Build files have been written to: /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios
-[1/602] Building C object CMakeFiles/unicorn-common.dir/glib_compat/gtestutils.c.o
-[2/602] Building C object CMakeFiles/unicorn-common.dir/list.c.o
-[3/602] Building C object CMakeFiles/unicorn-common.dir/glib_compat/gtree.c.o
-[4/602] Building C object CMakeFiles/unicorn-common.dir/glib_compat/garray.c.o
-[5/602] Building C object CMakeFiles/unicorn-common.dir/glib_compat/glib_compat.c.o
-[6/602] Building C object CMakeFiles/unicorn-common.dir/glib_compat/grand.c.o
-[7/602] Building C object CMakeFiles/unicorn-common.dir/glib_compat/glist.c.o
-[8/602] Building C object CMakeFiles/unicorn-common.dir/glib_compat/gmem.c.o
-[9/602] Building C object CMakeFiles/unicorn-common.dir/glib_compat/gpattern.c.o
-[10/602] Building C object CMakeFiles/unicorn-common.dir/glib_compat/gslice.c.o
-[11/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/cutils.c.o
-[12/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/bitops.c.o
-[13/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/crc32c.c.o
-[14/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/bitmap.c.o
-[15/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/getauxval.c.o
-[16/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/host-utils.c.o
-[17/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/guest-random.c.o
-[18/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/osdep.c.o
-[19/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/range.c.o
-[20/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/qemu-timer-common.c.o
-[21/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/qemu-timer.c.o
-FAILED: [code=1] CMakeFiles/unicorn-common.dir/qemu/util/qemu-timer.c.o 
-/usr/bin/cc --target=arm64-apple-ios13.0  -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -target arm64-apple-ios13.0    -fvisibility=hidden -fvisibility-inlines-hidden  -target arm64-apple-ios13.0    -fvisibility=hidden -fvisibility-inlines-hidden  -std=gnu11 -arch arm64 -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -miphoneos-version-min=13.0 -fvisibility=hidden -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wall -fPIC -Wno-missing-braces -DUNICORN_HAS_X86 -DUNICORN_HAS_ARM -DUNICORN_HAS_ARM64 -DUNICORN_HAS_M68K -DUNICORN_HAS_MIPS -DUNICORN_HAS_MIPSEL -DUNICORN_HAS_MIPS64 -DUNICORN_HAS_MIPS64EL -DUNICORN_HAS_SPARC -DUNICORN_HAS_PPC -DUNICORN_HAS_RISCV -DUNICORN_HAS_S390X -DUNICORN_HAS_TRICORE -MD -MT CMakeFiles/unicorn-common.dir/qemu/util/qemu-timer.c.o -MF CMakeFiles/unicorn-common.dir/qemu/util/qemu-timer.c.o.d -o CMakeFiles/unicorn-common.dir/qemu/util/qemu-timer.c.o -c /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/qemu-timer.c
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/qemu-timer.c:27:
+[1/100] Building C object CMakeFiles/unicorn-common.dir/glib_compat/gtestutils.c.o
+[2/100] Building C object CMakeFiles/unicorn-common.dir/list.c.o
+[3/100] Building C object CMakeFiles/unicorn-common.dir/glib_compat/glist.c.o
+[4/100] Building C object CMakeFiles/unicorn-common.dir/glib_compat/grand.c.o
+[5/100] Building C object CMakeFiles/unicorn-common.dir/glib_compat/gtree.c.o
+[6/100] Building C object CMakeFiles/unicorn-common.dir/glib_compat/gmem.c.o
+[7/100] Building C object CMakeFiles/unicorn-common.dir/glib_compat/gslice.c.o
+[8/100] Building C object CMakeFiles/unicorn-common.dir/glib_compat/gpattern.c.o
+[9/100] Building C object CMakeFiles/unicorn-common.dir/glib_compat/garray.c.o
+[10/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/bitops.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/bitops.c:14:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[11/100] Building C object CMakeFiles/unicorn-common.dir/glib_compat/glib_compat.c.o
+[12/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/crc32c.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/crc32c.c:28:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[13/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/cutils.c.o
+[14/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/getauxval.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/getauxval.c:25:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[15/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/guest-random.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/guest-random.c:12:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[16/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/host-utils.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/host-utils.c:26:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[17/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/osdep.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/osdep.c:24:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[18/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/qemu-timer-common.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/qemu-timer-common.c:24:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[19/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/qemu-timer.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/qemu-timer.c:25:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[20/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/bitmap.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/bitmap.c:12:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[21/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/range.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/range.c:20:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[22/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/qdist.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/qdist.c:9:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[23/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/pagesize.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/pagesize.c:9:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[24/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/qemu-thread-posix.c.o
+[25/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/cacheinfo.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/cacheinfo.c:9:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[26/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/oslib-posix.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/oslib-posix.c:29:
 In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/uc_priv.h:11:
 In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/qemu.h:12:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/sysemu/cpus.h:5:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/hw/core/cpu.h:28:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/thread.h:13:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/thread-posix.h:4:
-/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk/usr/include/pthread.h:588:6: error: expected identifier or '('
-  588 | void pthread_jit_write_protect_np(int enabled);
-      |      ^
-/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:513:42: note: expanded from macro 'pthread_jit_write_protect_np'
-  513 | #define pthread_jit_write_protect_np(x) (void)(x)
-      |                                          ^
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/qemu-timer.c:27:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/uc_priv.h:11:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/qemu.h:12:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/sysemu/cpus.h:5:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/hw/core/cpu.h:28:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/thread.h:13:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/thread-posix.h:4:
-/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk/usr/include/pthread.h:588:6: error: expected ')'
-/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:513:42: note: expanded from macro 'pthread_jit_write_protect_np'
-  513 | #define pthread_jit_write_protect_np(x) (void)(x)
-      |                                          ^
-/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk/usr/include/pthread.h:588:6: note: to match this '('
-/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:513:41: note: expanded from macro 'pthread_jit_write_protect_np'
-  513 | #define pthread_jit_write_protect_np(x) (void)(x)
-      |                                         ^
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/qemu-timer.c:27:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/uc_priv.h:11:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/qemu.h:12:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/sysemu/cpus.h:5:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/hw/core/cpu.h:28:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/thread.h:13:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/thread-posix.h:4:
-/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk/usr/include/pthread.h:592:44: error: too many arguments provided to function-like macro invocation
-  592 | int pthread_jit_write_protect_supported_np(void);
-      |                                            ^
-/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:512:9: note: macro 'pthread_jit_write_protect_supported_np' defined here
-  512 | #define pthread_jit_write_protect_supported_np() 0
-      |         ^
-3 errors generated.
-[22/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/qdist.c.o
-[23/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/qht.c.o
-FAILED: [code=1] CMakeFiles/unicorn-common.dir/qemu/util/qht.c.o 
-/usr/bin/cc --target=arm64-apple-ios13.0  -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -target arm64-apple-ios13.0    -fvisibility=hidden -fvisibility-inlines-hidden  -target arm64-apple-ios13.0    -fvisibility=hidden -fvisibility-inlines-hidden  -std=gnu11 -arch arm64 -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -miphoneos-version-min=13.0 -fvisibility=hidden -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wall -fPIC -Wno-missing-braces -DUNICORN_HAS_X86 -DUNICORN_HAS_ARM -DUNICORN_HAS_ARM64 -DUNICORN_HAS_M68K -DUNICORN_HAS_MIPS -DUNICORN_HAS_MIPSEL -DUNICORN_HAS_MIPS64 -DUNICORN_HAS_MIPS64EL -DUNICORN_HAS_SPARC -DUNICORN_HAS_PPC -DUNICORN_HAS_RISCV -DUNICORN_HAS_S390X -DUNICORN_HAS_TRICORE -MD -MT CMakeFiles/unicorn-common.dir/qemu/util/qht.c.o -MF CMakeFiles/unicorn-common.dir/qemu/util/qht.c.o.d -o CMakeFiles/unicorn-common.dir/qemu/util/qht.c.o -c /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/qht.c
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/qht.c:69:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/qht.h:11:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/thread.h:13:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/thread-posix.h:4:
-/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk/usr/include/pthread.h:588:6: error: expected identifier or '('
-  588 | void pthread_jit_write_protect_np(int enabled);
-      |      ^
-/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:513:42: note: expanded from macro 'pthread_jit_write_protect_np'
-  513 | #define pthread_jit_write_protect_np(x) (void)(x)
-      |                                          ^
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/qht.c:69:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/qht.h:11:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/thread.h:13:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/thread-posix.h:4:
-/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk/usr/include/pthread.h:588:6: error: expected ')'
-/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:513:42: note: expanded from macro 'pthread_jit_write_protect_np'
-  513 | #define pthread_jit_write_protect_np(x) (void)(x)
-      |                                          ^
-/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk/usr/include/pthread.h:588:6: note: to match this '('
-/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:513:41: note: expanded from macro 'pthread_jit_write_protect_np'
-  513 | #define pthread_jit_write_protect_np(x) (void)(x)
-      |                                         ^
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/qht.c:69:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/qht.h:11:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/thread.h:13:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/thread-posix.h:4:
-/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk/usr/include/pthread.h:592:44: error: too many arguments provided to function-like macro invocation
-  592 | int pthread_jit_write_protect_supported_np(void);
-      |                                            ^
-/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:512:9: note: macro 'pthread_jit_write_protect_supported_np' defined here
-  512 | #define pthread_jit_write_protect_supported_np() 0
-      |         ^
-3 errors generated.
-[24/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/pagesize.c.o
-FAILED: [code=1] CMakeFiles/unicorn-common.dir/qemu/util/pagesize.c.o 
-/usr/bin/cc --target=arm64-apple-ios13.0  -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -target arm64-apple-ios13.0    -fvisibility=hidden -fvisibility-inlines-hidden  -target arm64-apple-ios13.0    -fvisibility=hidden -fvisibility-inlines-hidden  -std=gnu11 -arch arm64 -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -miphoneos-version-min=13.0 -fvisibility=hidden -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wall -fPIC -Wno-missing-braces -DUNICORN_HAS_X86 -DUNICORN_HAS_ARM -DUNICORN_HAS_ARM64 -DUNICORN_HAS_M68K -DUNICORN_HAS_MIPS -DUNICORN_HAS_MIPSEL -DUNICORN_HAS_MIPS64 -DUNICORN_HAS_MIPS64EL -DUNICORN_HAS_SPARC -DUNICORN_HAS_PPC -DUNICORN_HAS_RISCV -DUNICORN_HAS_S390X -DUNICORN_HAS_TRICORE -MD -MT CMakeFiles/unicorn-common.dir/qemu/util/pagesize.c.o -MF CMakeFiles/unicorn-common.dir/qemu/util/pagesize.c.o.d -o CMakeFiles/unicorn-common.dir/qemu/util/pagesize.c.o -c /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/pagesize.c
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/pagesize.c:11:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/uc_priv.h:11:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/qemu.h:12:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/sysemu/cpus.h:5:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/hw/core/cpu.h:28:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/thread.h:13:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/thread-posix.h:4:
-/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk/usr/include/pthread.h:588:6: error: expected identifier or '('
-  588 | void pthread_jit_write_protect_np(int enabled);
-      |      ^
-/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:513:42: note: expanded from macro 'pthread_jit_write_protect_np'
-  513 | #define pthread_jit_write_protect_np(x) (void)(x)
-      |                                          ^
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/pagesize.c:11:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/uc_priv.h:11:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/qemu.h:12:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/sysemu/cpus.h:5:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/hw/core/cpu.h:28:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/thread.h:13:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/thread-posix.h:4:
-/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk/usr/include/pthread.h:588:6: error: expected ')'
-/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:513:42: note: expanded from macro 'pthread_jit_write_protect_np'
-  513 | #define pthread_jit_write_protect_np(x) (void)(x)
-      |                                          ^
-/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk/usr/include/pthread.h:588:6: note: to match this '('
-/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:513:41: note: expanded from macro 'pthread_jit_write_protect_np'
-  513 | #define pthread_jit_write_protect_np(x) (void)(x)
-      |                                         ^
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/pagesize.c:11:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/uc_priv.h:11:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/qemu.h:12:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/sysemu/cpus.h:5:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/hw/core/cpu.h:28:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/thread.h:13:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/thread-posix.h:4:
-/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk/usr/include/pthread.h:592:44: error: too many arguments provided to function-like macro invocation
-  592 | int pthread_jit_write_protect_supported_np(void);
-      |                                            ^
-/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:512:9: note: macro 'pthread_jit_write_protect_supported_np' defined here
-  512 | #define pthread_jit_write_protect_supported_np() 0
-      |         ^
-3 errors generated.
-[25/602] Building C object CMakeFiles/unicorn-common.dir/qemu/util/cacheinfo.c.o
-FAILED: [code=1] CMakeFiles/unicorn-common.dir/qemu/util/cacheinfo.c.o 
-/usr/bin/cc --target=arm64-apple-ios13.0  -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -target arm64-apple-ios13.0    -fvisibility=hidden -fvisibility-inlines-hidden  -target arm64-apple-ios13.0    -fvisibility=hidden -fvisibility-inlines-hidden  -std=gnu11 -arch arm64 -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -miphoneos-version-min=13.0 -fvisibility=hidden -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wall -fPIC -Wno-missing-braces -DUNICORN_HAS_X86 -DUNICORN_HAS_ARM -DUNICORN_HAS_ARM64 -DUNICORN_HAS_M68K -DUNICORN_HAS_MIPS -DUNICORN_HAS_MIPSEL -DUNICORN_HAS_MIPS64 -DUNICORN_HAS_MIPS64EL -DUNICORN_HAS_SPARC -DUNICORN_HAS_PPC -DUNICORN_HAS_RISCV -DUNICORN_HAS_S390X -DUNICORN_HAS_TRICORE -MD -MT CMakeFiles/unicorn-common.dir/qemu/util/cacheinfo.c.o -MF CMakeFiles/unicorn-common.dir/qemu/util/cacheinfo.c.o.d -o CMakeFiles/unicorn-common.dir/qemu/util/cacheinfo.c.o -c /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/cacheinfo.c
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/cacheinfo.c:13:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/uc_priv.h:11:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/qemu.h:12:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/sysemu/cpus.h:5:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/hw/core/cpu.h:28:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/thread.h:13:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/thread-posix.h:4:
-/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk/usr/include/pthread.h:588:6: error: expected identifier or '('
-  588 | void pthread_jit_write_protect_np(int enabled);
-      |      ^
-/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:513:42: note: expanded from macro 'pthread_jit_write_protect_np'
-  513 | #define pthread_jit_write_protect_np(x) (void)(x)
-      |                                          ^
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/cacheinfo.c:13:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/uc_priv.h:11:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/qemu.h:12:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/sysemu/cpus.h:5:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/hw/core/cpu.h:28:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/thread.h:13:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/thread-posix.h:4:
-/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk/usr/include/pthread.h:588:6: error: expected ')'
-/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:513:42: note: expanded from macro 'pthread_jit_write_protect_np'
-  513 | #define pthread_jit_write_protect_np(x) (void)(x)
-      |                                          ^
-/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk/usr/include/pthread.h:588:6: note: to match this '('
-/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:513:41: note: expanded from macro 'pthread_jit_write_protect_np'
-  513 | #define pthread_jit_write_protect_np(x) (void)(x)
-      |                                         ^
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/cacheinfo.c:13:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/uc_priv.h:11:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/qemu.h:12:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/sysemu/cpus.h:5:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/hw/core/cpu.h:28:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/thread.h:13:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/thread-posix.h:4:
-/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk/usr/include/pthread.h:592:44: error: too many arguments provided to function-like macro invocation
-  592 | int pthread_jit_write_protect_supported_np(void);
-      |                                            ^
-/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:512:9: note: macro 'pthread_jit_write_protect_supported_np' defined here
-  512 | #define pthread_jit_write_protect_supported_np() 0
-      |         ^
-3 errors generated.
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/sysemu/cpus.h:4:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/timer.h:4:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/bitops.h:16:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/host-utils.h:29:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/bswap.h:4:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[27/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/exec-vary.c.o
+FAILED: [code=1] CMakeFiles/x86_64-softmmu.dir/qemu/exec-vary.c.o 
+/usr/bin/cc  -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -DHAVE_PTHREAD_JIT_PROTECT=0 -Wno-error -O3 -DNDEBUG -std=gnu11 -arch arm64 -isysroot /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wall -fPIC -Wno-missing-braces -DNEED_CPU_H -include x86_64.h -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/x86_64-softmmu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386 -MD -MT CMakeFiles/x86_64-softmmu.dir/qemu/exec-vary.c.o -MF CMakeFiles/x86_64-softmmu.dir/qemu/exec-vary.c.o.d -o CMakeFiles/x86_64-softmmu.dir/qemu/exec-vary.c.o -c /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/exec-vary.c
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/exec-vary.c:20:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/exec-vary.c:25:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/exec/exec-all.h:25:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/exec/cpu_ldst.h:90:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/tcg/tcg.h:35:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/tcg/tcg-apple-jit.h:112:12: error: 'pthread_jit_write_protect_np' is unavailable: not available on iOS
+    return pthread_jit_write_protect_np(enabled);
+           ^
+/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/usr/include/pthread.h:588:6: note: 'pthread_jit_write_protect_np' has been explicitly marked unavailable here
+void pthread_jit_write_protect_np(int enabled);
+     ^
+1 warning and 1 error generated.
+[28/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/cpus.c.o
+FAILED: [code=1] CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/cpus.c.o 
+/usr/bin/cc  -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -DHAVE_PTHREAD_JIT_PROTECT=0 -Wno-error -O3 -DNDEBUG -std=gnu11 -arch arm64 -isysroot /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wall -fPIC -Wno-missing-braces -DNEED_CPU_H -include x86_64.h -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/x86_64-softmmu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386 -MD -MT CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/cpus.c.o -MF CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/cpus.c.o.d -o CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/cpus.c.o -c /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/softmmu/cpus.c
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/softmmu/cpus.c:26:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/sysemu/cpus.h:4:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/timer.h:4:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/bitops.h:16:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/host-utils.h:29:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/bswap.h:4:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/softmmu/cpus.c:28:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/tcg/tcg.h:35:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/tcg/tcg-apple-jit.h:112:12: error: 'pthread_jit_write_protect_np' is unavailable: not available on iOS
+    return pthread_jit_write_protect_np(enabled);
+           ^
+/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/usr/include/pthread.h:588:6: note: 'pthread_jit_write_protect_np' has been explicitly marked unavailable here
+void pthread_jit_write_protect_np(int enabled);
+     ^
+1 warning and 1 error generated.
+[29/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/exec.c.o
+FAILED: [code=1] CMakeFiles/x86_64-softmmu.dir/qemu/exec.c.o 
+/usr/bin/cc  -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -DHAVE_PTHREAD_JIT_PROTECT=0 -Wno-error -O3 -DNDEBUG -std=gnu11 -arch arm64 -isysroot /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wall -fPIC -Wno-missing-braces -DNEED_CPU_H -include x86_64.h -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/x86_64-softmmu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386 -MD -MT CMakeFiles/x86_64-softmmu.dir/qemu/exec.c.o -MF CMakeFiles/x86_64-softmmu.dir/qemu/exec.c.o.d -o CMakeFiles/x86_64-softmmu.dir/qemu/exec.c.o -c /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/exec.c
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/exec.c:20:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/exec.c:26:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/exec/exec-all.h:25:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/exec/cpu_ldst.h:90:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/tcg/tcg.h:35:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/tcg/tcg-apple-jit.h:112:12: error: 'pthread_jit_write_protect_np' is unavailable: not available on iOS
+    return pthread_jit_write_protect_np(enabled);
+           ^
+/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/usr/include/pthread.h:588:6: note: 'pthread_jit_write_protect_np' has been explicitly marked unavailable here
+void pthread_jit_write_protect_np(int enabled);
+     ^
+1 warning and 1 error generated.
+[30/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/qht.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/qht.c:68:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[31/100] Building C object CMakeFiles/unicorn-common.dir/qemu/crypto/aes.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/crypto/aes.c:30:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
 ninja: build stopped: subcommand failed.
