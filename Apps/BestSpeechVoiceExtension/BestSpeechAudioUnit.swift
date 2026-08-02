@@ -39,11 +39,11 @@ public class SpeechSynthesizer: AVSpeechSynthesisProviderAudioUnit {
         
         // Locate DLL from bundle, App Group container, or current directory
         var resolvedDLLURL: URL? = nil
-        let possibleNames = ["b32_tts.dll", "B32_TTS.DLL", "b32_tts", "B32_TTS"]
+        let possibleNames = ["b32_tts.dat", "B32_TTS.DAT", "b32_tts", "B32_TTS"]
         
         // 1. Search in Extension bundle
         let extBundle = Bundle(for: SpeechSynthesizer.self)
-        for name in ["b32_tts.dll", "B32_TTS.DLL"] {
+        for name in ["b32_tts.dat", "B32_TTS.DAT"] {
             if let path = extBundle.path(forResource: name, ofType: nil) {
                 resolvedDLLURL = URL(fileURLWithPath: path)
                 break
@@ -57,7 +57,7 @@ public class SpeechSynthesizer: AVSpeechSynthesisProviderAudioUnit {
         
         // 2. Search in App Group container
         if resolvedDLLURL == nil, let appGroupURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.bestspeech") {
-            for name in ["b32_tts.dll", "B32_TTS.DLL"] {
+            for name in ["b32_tts.dat", "B32_TTS.DAT"] {
                 let candidate = appGroupURL.appendingPathComponent(name)
                 if FileManager.default.fileExists(atPath: candidate.path) {
                     resolvedDLLURL = candidate
@@ -68,7 +68,7 @@ public class SpeechSynthesizer: AVSpeechSynthesisProviderAudioUnit {
         
         // 3. Search in Main Bundle
         if resolvedDLLURL == nil {
-            for name in ["b32_tts.dll", "B32_TTS.DLL"] {
+            for name in ["b32_tts.dat", "B32_TTS.DAT"] {
                 let candidate = Bundle.main.bundleURL.appendingPathComponent(name)
                 if FileManager.default.fileExists(atPath: candidate.path) {
                     resolvedDLLURL = candidate

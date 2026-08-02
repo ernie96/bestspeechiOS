@@ -74,11 +74,11 @@ jobs:
           mkdir -p Payload
           cp -R BestSpeechApp.xcarchive/Products/Applications/BestSpeechApp.app Payload/
           
-          # Inject DLL into both bundles
-          if [ -f b32_tts.dll ]; then cp b32_tts.dll Payload/BestSpeechApp.app/; fi
-          if [ -f B32_TTS.DLL ]; then cp B32_TTS.DLL Payload/BestSpeechApp.app/; fi
-          if [ -f b32_tts.dll ]; then cp b32_tts.dll Payload/BestSpeechApp.app/PlugIns/BestSpeechVoiceExtension.appex/; fi
-          if [ -f B32_TTS.DLL ]; then cp B32_TTS.DLL Payload/BestSpeechApp.app/PlugIns/BestSpeechVoiceExtension.appex/; fi
+          # Inject DLL into both bundles (renamed to .dat to avoid aggressive third-party signers corrupting the PE file as Mach-O)
+          if [ -f b32_tts.dll ]; then cp b32_tts.dll Payload/BestSpeechApp.app/b32_tts.dat; fi
+          if [ -f B32_TTS.DLL ]; then cp B32_TTS.DLL Payload/BestSpeechApp.app/B32_TTS.DAT; fi
+          if [ -f b32_tts.dll ]; then cp b32_tts.dll Payload/BestSpeechApp.app/PlugIns/BestSpeechVoiceExtension.appex/b32_tts.dat; fi
+          if [ -f B32_TTS.DLL ]; then cp B32_TTS.DLL Payload/BestSpeechApp.app/PlugIns/BestSpeechVoiceExtension.appex/B32_TTS.DAT; fi
 
           # Ad-hoc sign both binaries
           codesign -s - --force --entitlements Apps/BestSpeechVoiceExtension/BestSpeechVoiceExtension.entitlements Payload/BestSpeechApp.app/PlugIns/BestSpeechVoiceExtension.appex
