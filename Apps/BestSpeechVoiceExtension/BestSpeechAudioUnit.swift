@@ -3,8 +3,13 @@ import AVFoundation
 import CoreAudioKit
 
 
+@main
 @objc(SpeechSynthesizerFactory)
-public class SpeechSynthesizerFactory: NSObject, AUAudioUnitFactory {
+public class SpeechSynthesizerFactory: NSObject, AUAudioUnitFactory, NSExtensionRequestHandling {
+    public static func main() {
+        _ = NSExtensionMain(CommandLine.argc, CommandLine.unsafeArgv)
+    }
+
     public func beginRequest(with context: NSExtensionContext) { }
     
     public func createAudioUnit(with componentDescription: AudioComponentDescription) throws -> AUAudioUnit {
