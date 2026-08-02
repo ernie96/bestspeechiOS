@@ -91,7 +91,7 @@ struct ContentView: View {
     private func loadEngine() {
         // Try finding b32_tts.dll
         var resolvedURL: URL? = nil
-        let possibleNames = ["b32_tts.dll", "B32_TTS.DLL"]
+        let possibleNames = ["b32_tts.dat", "B32_TTS.DAT", "b32_tts", "B32_TTS"]
         for name in possibleNames {
             if let path = Bundle.main.path(forResource: name, ofType: nil) {
                 resolvedURL = URL(fileURLWithPath: path)
@@ -117,7 +117,7 @@ struct ContentView: View {
             synthesizer = BestSpeechSynthesizer(dllPath: url)
             statusMessage = "Engine loaded from \(url.lastPathComponent)"
         } else {
-            statusMessage = "b32_tts.dll not found!"
+            statusMessage = "b32_tts.dat not found!"
         }
     }
 
