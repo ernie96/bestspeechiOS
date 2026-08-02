@@ -1,0 +1,73 @@
+name: BestSpeech
+options:
+  bundleIdPrefix: com.bestspeech
+  deploymentTarget:
+    iOS: "16.0"
+  createIntermediateGroups: true
+
+settings:
+  base:
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1.0.0"
+    SWIFT_VERSION: "5.9"
+    CODE_SIGNING_ALLOWED: NO
+    CODE_SIGNING_REQUIRED: NO
+    AD_HOC_CODE_SIGNING_ALLOWED: YES
+
+targets:
+  BestSpeechKit:
+    type: library.static
+    platform: iOS
+    sources:
+      - Sources/CBestSpeech
+      - Sources/BestSpeechKit
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.bestspeech.kit
+        PRODUCT_NAME: BestSpeechKit
+        APPLICATION_EXTENSION_API_ONLY: YES
+        HEADER_SEARCH_PATHS: 
+          - "$(SRCROOT)/Sources/CBestSpeech/include"
+          - "$(SRCROOT)/third_party/unicorn/include"
+        OTHER_LDFLAGS:
+          - "-lc++"
+          - "$(SRCROOT)/third_party/unicorn/build-ios/libunicorn.a"
+        ENABLE_BITCODE: NO
+
+  BestSpeechVoiceExtension:
+    type: app-extension
+    platform: iOS
+    sources:
+      - Apps/BestSpeechVoiceExtension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.bestspeech.VoiceExtension
+        APPLICATION_EXTENSION_API_ONLY: YES
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: Apps/BestSpeechVoiceExtension/Info.plist
+        CODE_SIGN_ENTITLEMENTS: Apps/BestSpeechVoiceExtension/BestSpeechVoiceExtension.entitlements
+        PRODUCT_NAME: BestSpeechVoiceExtension
+        TARGETED_DEVICE_FAMILY: "1,2"
+        ENABLE_BITCODE: NO
+        SWIFT_OBJC_BRIDGING_HEADER: Apps/BestSpeechVoiceExtension/BestSpeechVoiceExtension-Bridging-Header.h
+    dependencies:
+      - target: BestSpeechKit
+
+  BestSpeechApp:
+    type: application
+    platform: iOS
+    sources:
+      - Apps/BestSpeechApp
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.bestspeech
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: Apps/BestSpeechApp/Info.plist
+        CODE_SIGN_ENTITLEMENTS: Apps/BestSpeechApp/BestSpeechApp.entitlements
+        PRODUCT_NAME: BestSpeechApp
+        TARGETED_DEVICE_FAMILY: "1,2"
+        ENABLE_BITCODE: NO
+        SWIFT_OBJC_BRIDGING_HEADER: Apps/BestSpeechApp/BestSpeechApp-Bridging-Header.h
+    dependencies:
+      - target: BestSpeechKit
+      - target: BestSpeechVoiceExtension
