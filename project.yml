@@ -15,30 +15,13 @@ settings:
     AD_HOC_CODE_SIGNING_ALLOWED: YES
 
 targets:
-  BestSpeechKit:
-    type: library.static
-    platform: iOS
-    sources:
-      - Sources/CBestSpeech
-      - Sources/BestSpeechKit
-    settings:
-      base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.bestspeech.kit
-        PRODUCT_NAME: BestSpeechKit
-        APPLICATION_EXTENSION_API_ONLY: YES
-        HEADER_SEARCH_PATHS: 
-          - "$(SRCROOT)/Sources/CBestSpeech/include"
-          - "$(SRCROOT)/third_party/unicorn/include"
-        OTHER_LDFLAGS:
-          - "-lc++"
-          - "$(SRCROOT)/third_party/unicorn/build-ios/libunicorn.a"
-        ENABLE_BITCODE: NO
-
   BestSpeechVoiceExtension:
     type: app-extension
     platform: iOS
     sources:
       - Apps/BestSpeechVoiceExtension
+      - Sources/CBestSpeech
+      - Sources/BestSpeechKit
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.bestspeech.VoiceExtension
@@ -50,14 +33,20 @@ targets:
         TARGETED_DEVICE_FAMILY: "1,2"
         ENABLE_BITCODE: NO
         SWIFT_OBJC_BRIDGING_HEADER: Apps/BestSpeechVoiceExtension/BestSpeechVoiceExtension-Bridging-Header.h
-    dependencies:
-      - target: BestSpeechKit
+        HEADER_SEARCH_PATHS: 
+          - "$(SRCROOT)/Sources/CBestSpeech/include"
+          - "$(SRCROOT)/third_party/unicorn/include"
+        OTHER_LDFLAGS:
+          - "-lc++"
+          - "$(SRCROOT)/third_party/unicorn/build-ios/libunicorn.a"
 
   BestSpeechApp:
     type: application
     platform: iOS
     sources:
       - Apps/BestSpeechApp
+      - Sources/CBestSpeech
+      - Sources/BestSpeechKit
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.bestspeech
@@ -68,6 +57,11 @@ targets:
         TARGETED_DEVICE_FAMILY: "1,2"
         ENABLE_BITCODE: NO
         SWIFT_OBJC_BRIDGING_HEADER: Apps/BestSpeechApp/BestSpeechApp-Bridging-Header.h
+        HEADER_SEARCH_PATHS: 
+          - "$(SRCROOT)/Sources/CBestSpeech/include"
+          - "$(SRCROOT)/third_party/unicorn/include"
+        OTHER_LDFLAGS:
+          - "-lc++"
+          - "$(SRCROOT)/third_party/unicorn/build-ios/libunicorn.a"
     dependencies:
-      - target: BestSpeechKit
       - target: BestSpeechVoiceExtension
