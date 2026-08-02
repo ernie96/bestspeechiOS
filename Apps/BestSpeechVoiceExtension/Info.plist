@@ -22,21 +22,27 @@
 	<string>1.0.0</string>
 	<key>NSExtension</key>
 	<dict>
-		<key>NSExtensionPointIdentifier</key>
-		<string>com.apple.AudioUnit</string>
 		<key>NSExtensionAttributes</key>
 		<dict>
 			<key>AudioComponents</key>
 			<array>
 				<dict>
 					<key>description</key>
-					<string>BestSpeech</string>
+					<string>BestSpeech Synthesizer</string>
 					<key>factoryFunction</key>
-					<string>$(PRODUCT_MODULE_NAME).SpeechSynthesizerFactory</string>
+					<string>BestSpeechVoiceExtension.SpeechSynthesizerFactory</string>
+					<key>manufacturer</key>
+					<string>Bspc</string>
 					<key>name</key>
 					<string>BestSpeech: Voice</string>
+					<key>sandboxSafe</key>
+					<true/>
 					<key>subtype</key>
 					<string>b32t</string>
+					<key>tags</key>
+					<array>
+						<string>Speech Synthesizer</string>
+					</array>
 					<key>type</key>
 					<string>ausp</string>
 					<key>version</key>
@@ -44,6 +50,10 @@
 				</dict>
 			</array>
 		</dict>
+		<key>NSExtensionPointIdentifier</key>
+		<string>com.apple.AudioUnit</string>
+		<key>NSExtensionPrincipalClass</key>
+		<string>BestSpeechVoiceExtension.SpeechSynthesizerFactory</string>
 	</dict>
 </dict>
 </plist>
