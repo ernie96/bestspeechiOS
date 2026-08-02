@@ -122,9 +122,9 @@ jobs:
           if [ -f b32_tts.dll ]; then cp b32_tts.dll Payload/BestSpeechApp.app/PlugIns/BestSpeechVoiceExtension.appex/; fi
           if [ -f B32_TTS.DLL ]; then cp B32_TTS.DLL Payload/BestSpeechApp.app/PlugIns/BestSpeechVoiceExtension.appex/; fi
 
-          # Ad-hoc sign both binaries
-          codesign -s - --force Payload/BestSpeechApp.app/PlugIns/BestSpeechVoiceExtension.appex
-          codesign -s - --force Payload/BestSpeechApp.app
+          # Ad-hoc sign both binaries with entitlements
+          codesign -s - --force --entitlements Apps/BestSpeechVoiceExtension/BestSpeechVoiceExtension.entitlements Payload/BestSpeechApp.app/PlugIns/BestSpeechVoiceExtension.appex
+          codesign -s - --force --entitlements Apps/BestSpeechApp/BestSpeechApp.entitlements Payload/BestSpeechApp.app
 
           # Zip into .ipa
           rm -f BestSpeechApp.ipa
