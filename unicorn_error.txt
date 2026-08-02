@@ -1,24 +1,14 @@
-[1/100] Building C object CMakeFiles/unicorn-common.dir/glib_compat/gtestutils.c.o
-[2/100] Building C object CMakeFiles/unicorn-common.dir/list.c.o
-[3/100] Building C object CMakeFiles/unicorn-common.dir/glib_compat/glist.c.o
-[4/100] Building C object CMakeFiles/unicorn-common.dir/glib_compat/grand.c.o
-[5/100] Building C object CMakeFiles/unicorn-common.dir/glib_compat/gtree.c.o
-[6/100] Building C object CMakeFiles/unicorn-common.dir/glib_compat/gmem.c.o
-[7/100] Building C object CMakeFiles/unicorn-common.dir/glib_compat/gslice.c.o
-[8/100] Building C object CMakeFiles/unicorn-common.dir/glib_compat/gpattern.c.o
-[9/100] Building C object CMakeFiles/unicorn-common.dir/glib_compat/garray.c.o
-[10/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/bitops.c.o
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/bitops.c:14:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
-/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
-#define HAVE_PTHREAD_JIT_PROTECT 1
-        ^
-<command line>:1:9: note: previous definition is here
-#define HAVE_PTHREAD_JIT_PROTECT 0
-        ^
-1 warning generated.
-[11/100] Building C object CMakeFiles/unicorn-common.dir/glib_compat/glib_compat.c.o
-[12/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/crc32c.c.o
+[1/100] Building C object CMakeFiles/unicorn-common.dir/list.c.o
+[2/100] Building C object CMakeFiles/unicorn-common.dir/glib_compat/gtestutils.c.o
+[3/100] Building C object CMakeFiles/unicorn-common.dir/glib_compat/garray.c.o
+[4/100] Building C object CMakeFiles/unicorn-common.dir/glib_compat/gtree.c.o
+[5/100] Building C object CMakeFiles/unicorn-common.dir/glib_compat/glib_compat.c.o
+[6/100] Building C object CMakeFiles/unicorn-common.dir/glib_compat/glist.c.o
+[7/100] Building C object CMakeFiles/unicorn-common.dir/glib_compat/grand.c.o
+[8/100] Building C object CMakeFiles/unicorn-common.dir/glib_compat/gmem.c.o
+[9/100] Building C object CMakeFiles/unicorn-common.dir/glib_compat/gslice.c.o
+[10/100] Building C object CMakeFiles/unicorn-common.dir/glib_compat/gpattern.c.o
+[11/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/crc32c.c.o
 In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/crc32c.c:28:
 In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
 /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
@@ -28,9 +18,19 @@ In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party
 #define HAVE_PTHREAD_JIT_PROTECT 0
         ^
 1 warning generated.
-[13/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/cutils.c.o
-[14/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/getauxval.c.o
+[12/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/cutils.c.o
+[13/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/getauxval.c.o
 In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/getauxval.c:25:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[14/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/bitops.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/bitops.c:14:
 In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
 /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
 #define HAVE_PTHREAD_JIT_PROTECT 1
@@ -79,27 +79,7 @@ In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party
 #define HAVE_PTHREAD_JIT_PROTECT 0
         ^
 1 warning generated.
-[19/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/qemu-timer.c.o
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/qemu-timer.c:25:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
-/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
-#define HAVE_PTHREAD_JIT_PROTECT 1
-        ^
-<command line>:1:9: note: previous definition is here
-#define HAVE_PTHREAD_JIT_PROTECT 0
-        ^
-1 warning generated.
-[20/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/bitmap.c.o
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/bitmap.c:12:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
-/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
-#define HAVE_PTHREAD_JIT_PROTECT 1
-        ^
-<command line>:1:9: note: previous definition is here
-#define HAVE_PTHREAD_JIT_PROTECT 0
-        ^
-1 warning generated.
-[21/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/range.c.o
+[19/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/range.c.o
 In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/range.c:20:
 In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
 /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
@@ -109,8 +89,28 @@ In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party
 #define HAVE_PTHREAD_JIT_PROTECT 0
         ^
 1 warning generated.
-[22/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/qdist.c.o
+[20/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/qdist.c.o
 In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/qdist.c:9:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[21/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/qemu-timer.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/qemu-timer.c:25:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[22/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/bitmap.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/bitmap.c:12:
 In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
 /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
 #define HAVE_PTHREAD_JIT_PROTECT 1
@@ -129,8 +129,7 @@ In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party
 #define HAVE_PTHREAD_JIT_PROTECT 0
         ^
 1 warning generated.
-[24/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/qemu-thread-posix.c.o
-[25/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/cacheinfo.c.o
+[24/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/cacheinfo.c.o
 In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/cacheinfo.c:9:
 In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
 /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
@@ -140,6 +139,7 @@ In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party
 #define HAVE_PTHREAD_JIT_PROTECT 0
         ^
 1 warning generated.
+[25/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/qemu-thread-posix.c.o
 [26/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/oslib-posix.c.o
 In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/oslib-posix.c:29:
 In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/uc_priv.h:11:
@@ -158,8 +158,6 @@ In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party
         ^
 1 warning generated.
 [27/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/exec-vary.c.o
-FAILED: [code=1] CMakeFiles/x86_64-softmmu.dir/qemu/exec-vary.c.o 
-/usr/bin/cc  -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -DHAVE_PTHREAD_JIT_PROTECT=0 -Wno-error -O3 -DNDEBUG -std=gnu11 -arch arm64 -isysroot /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wall -fPIC -Wno-missing-braces -DNEED_CPU_H -include x86_64.h -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/x86_64-softmmu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386 -MD -MT CMakeFiles/x86_64-softmmu.dir/qemu/exec-vary.c.o -MF CMakeFiles/x86_64-softmmu.dir/qemu/exec-vary.c.o.d -o CMakeFiles/x86_64-softmmu.dir/qemu/exec-vary.c.o -c /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/exec-vary.c
 In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/exec-vary.c:20:
 In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
 /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
@@ -168,20 +166,28 @@ In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party
 <command line>:1:9: note: previous definition is here
 #define HAVE_PTHREAD_JIT_PROTECT 0
         ^
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/exec-vary.c:25:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/exec/exec-all.h:25:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/exec/cpu_ldst.h:90:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/tcg/tcg.h:35:
-/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/tcg/tcg-apple-jit.h:112:12: error: 'pthread_jit_write_protect_np' is unavailable: not available on iOS
-    return pthread_jit_write_protect_np(enabled);
-           ^
-/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/usr/include/pthread.h:588:6: note: 'pthread_jit_write_protect_np' has been explicitly marked unavailable here
-void pthread_jit_write_protect_np(int enabled);
-     ^
-1 warning and 1 error generated.
-[28/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/cpus.c.o
-FAILED: [code=1] CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/cpus.c.o 
-/usr/bin/cc  -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -DHAVE_PTHREAD_JIT_PROTECT=0 -Wno-error -O3 -DNDEBUG -std=gnu11 -arch arm64 -isysroot /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wall -fPIC -Wno-missing-braces -DNEED_CPU_H -include x86_64.h -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/x86_64-softmmu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386 -MD -MT CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/cpus.c.o -MF CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/cpus.c.o.d -o CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/cpus.c.o -c /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/softmmu/cpus.c
+1 warning generated.
+[28/100] Building C object CMakeFiles/unicorn-common.dir/qemu/crypto/aes.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/crypto/aes.c:30:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[29/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/qht.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/qht.c:68:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[30/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/cpus.c.o
 In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/softmmu/cpus.c:26:
 In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/sysemu/cpus.h:4:
 In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/timer.h:4:
@@ -195,18 +201,38 @@ In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party
 <command line>:1:9: note: previous definition is here
 #define HAVE_PTHREAD_JIT_PROTECT 0
         ^
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/softmmu/cpus.c:28:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/tcg/tcg.h:35:
-/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/tcg/tcg-apple-jit.h:112:12: error: 'pthread_jit_write_protect_np' is unavailable: not available on iOS
-    return pthread_jit_write_protect_np(enabled);
-           ^
-/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/usr/include/pthread.h:588:6: note: 'pthread_jit_write_protect_np' has been explicitly marked unavailable here
-void pthread_jit_write_protect_np(int enabled);
-     ^
-1 warning and 1 error generated.
-[29/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/exec.c.o
-FAILED: [code=1] CMakeFiles/x86_64-softmmu.dir/qemu/exec.c.o 
-/usr/bin/cc  -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/glib_compat -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg -DHAVE_PTHREAD_JIT_PROTECT=0 -Wno-error -O3 -DNDEBUG -std=gnu11 -arch arm64 -isysroot /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wall -fPIC -Wno-missing-braces -DNEED_CPU_H -include x86_64.h -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/x86_64-softmmu -I/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386 -MD -MT CMakeFiles/x86_64-softmmu.dir/qemu/exec.c.o -MF CMakeFiles/x86_64-softmmu.dir/qemu/exec.c.o.d -o CMakeFiles/x86_64-softmmu.dir/qemu/exec.c.o -c /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/exec.c
+1 warning generated.
+[31/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/memory_mapping.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/softmmu/memory_mapping.c:14:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[32/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/ioport.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/softmmu/ioport.c:28:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[33/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/memory.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/softmmu/memory.c:16:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[34/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/exec.c.o
 In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/exec.c:20:
 In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
 /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
@@ -215,19 +241,9 @@ In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party
 <command line>:1:9: note: previous definition is here
 #define HAVE_PTHREAD_JIT_PROTECT 0
         ^
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/exec.c:26:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/exec/exec-all.h:25:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/exec/cpu_ldst.h:90:
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/tcg/tcg.h:35:
-/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/tcg/tcg-apple-jit.h:112:12: error: 'pthread_jit_write_protect_np' is unavailable: not available on iOS
-    return pthread_jit_write_protect_np(enabled);
-           ^
-/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/usr/include/pthread.h:588:6: note: 'pthread_jit_write_protect_np' has been explicitly marked unavailable here
-void pthread_jit_write_protect_np(int enabled);
-     ^
-1 warning and 1 error generated.
-[30/100] Building C object CMakeFiles/unicorn-common.dir/qemu/util/qht.c.o
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/util/qht.c:68:
+1 warning generated.
+[35/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/tcg/optimize.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/optimize.c:26:
 In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
 /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
 #define HAVE_PTHREAD_JIT_PROTECT 1
@@ -236,8 +252,8 @@ In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party
 #define HAVE_PTHREAD_JIT_PROTECT 0
         ^
 1 warning generated.
-[31/100] Building C object CMakeFiles/unicorn-common.dir/qemu/crypto/aes.c.o
-In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/crypto/aes.c:30:
+[36/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/tcg/tcg-op-vec.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/tcg-op-vec.c:20:
 In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
 /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
 #define HAVE_PTHREAD_JIT_PROTECT 1
@@ -246,4 +262,561 @@ In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party
 #define HAVE_PTHREAD_JIT_PROTECT 0
         ^
 1 warning generated.
-ninja: build stopped: subcommand failed.
+[37/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/accel/tcg/cpu-exec.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/accel/tcg/cpu-exec.c:20:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[38/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/accel/tcg/cpu-exec-common.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/accel/tcg/cpu-exec-common.c:20:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[39/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/tcg/tcg-op.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/tcg-op.c:25:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[40/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/accel/tcg/tcg-all.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/accel/tcg/tcg-all.c:26:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[41/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/accel/tcg/tcg-runtime.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/accel/tcg/tcg-runtime.c:24:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[42/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/tcg/tcg-op-gvec.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/tcg-op-gvec.c:20:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[43/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/accel/tcg/translate-all.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/accel/tcg/translate-all.c:20:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[44/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/accel/tcg/cputlb.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/accel/tcg/cputlb.c:20:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[45/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/accel/tcg/translator.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/accel/tcg/translator.c:10:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[46/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/tcg/tcg.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/tcg.c:28:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/tcg.c:294:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64/tcg-target.inc.c:1508:41: warning: initializer overrides prior initialization of this subobject [-Winitializer-overrides]
+        [TCG_MO_ST_ST]                = DMB_ISH | DMB_ST,
+                                        ^~~~~~~~~~~~~~~~
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64/tcg-target.inc.c:1507:41: note: previous initialization is here
+        [0 ... TCG_MO_ALL]            = DMB_ISH | DMB_LD | DMB_ST,
+                                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64/tcg-target.inc.c:1509:41: warning: initializer overrides prior initialization of this subobject [-Winitializer-overrides]
+        [TCG_MO_LD_LD]                = DMB_ISH | DMB_LD,
+                                        ^~~~~~~~~~~~~~~~
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64/tcg-target.inc.c:1507:41: note: previous initialization is here
+        [0 ... TCG_MO_ALL]            = DMB_ISH | DMB_LD | DMB_ST,
+                                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64/tcg-target.inc.c:1510:41: warning: initializer overrides prior initialization of this subobject [-Winitializer-overrides]
+        [TCG_MO_LD_ST]                = DMB_ISH | DMB_LD,
+                                        ^~~~~~~~~~~~~~~~
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64/tcg-target.inc.c:1507:41: note: previous initialization is here
+        [0 ... TCG_MO_ALL]            = DMB_ISH | DMB_LD | DMB_ST,
+                                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64/tcg-target.inc.c:1511:41: warning: initializer overrides prior initialization of this subobject [-Winitializer-overrides]
+        [TCG_MO_LD_ST | TCG_MO_LD_LD] = DMB_ISH | DMB_LD,
+                                        ^~~~~~~~~~~~~~~~
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/tcg/aarch64/tcg-target.inc.c:1507:41: note: previous initialization is here
+        [0 ... TCG_MO_ALL]            = DMB_ISH | DMB_LD | DMB_ST,
+                                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+5 warnings generated.
+[47/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/softmmu/unicorn_vtlb.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/softmmu/unicorn_vtlb.c:2:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[48/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/hw/i386/x86.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/hw/i386/x86.c:29:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/cpu.h:24:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/cpu-qom.h:23:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/hw/core/cpu.h:26:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/bitmap.h:16:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/bitops.h:16:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/host-utils.h:29:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/bswap.h:4:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[49/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/target/i386/arch_memory_mapping.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/arch_memory_mapping.c:14:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[50/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/target/i386/bpt_helper.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/bpt_helper.c:20:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[51/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/target/i386/cc_helper.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/cc_helper.c:20:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[52/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/fpu/softfloat.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/fpu/softfloat.c:85:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[53/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/target/i386/excp_helper.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/excp_helper.c:20:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[54/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/target/i386/cpu.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/cpu.c:20:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/cpu.c:3834:20: warning: unused function 'feat2prop' [-Wunused-function]
+static inline void feat2prop(char *s)
+                   ^
+2 warnings generated.
+[55/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/target/i386/helper.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/helper.c:20:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[56/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/target/i386/int_helper.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/int_helper.c:20:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[57/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/target/i386/machine.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/machine.c:1:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[58/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/target/i386/mem_helper.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/mem_helper.c:20:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[59/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/accel/tcg/tcg-runtime-gvec.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/accel/tcg/tcg-runtime-gvec.c:20:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[60/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/target/i386/mpx_helper.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/mpx_helper.c:20:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[61/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/target/i386/misc_helper.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/misc_helper.c:20:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[62/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/target/i386/smm_helper.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/smm_helper.c:20:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[63/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/target/i386/svm_helper.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/svm_helper.c:20:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[64/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/target/i386/xsave_helper.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/xsave_helper.c:5:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[65/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/target/i386/unicorn.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/unicorn.c:5:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/uc_priv.h:11:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/qemu.h:12:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/sysemu/cpus.h:4:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/timer.h:4:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/bitops.h:16:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/host-utils.h:29:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/bswap.h:4:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[66/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/target/i386/seg_helper.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/seg_helper.c:21:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[67/100] Building C object CMakeFiles/unicorn.dir/qemu/softmmu/vl.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/softmmu/vl.c:26:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/sysemu/cpus.h:4:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/timer.h:4:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/bitops.h:16:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/host-utils.h:29:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/bswap.h:4:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:2:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[68/100] Building C object CMakeFiles/unicorn.dir/qemu/hw/core/cpu.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/hw/core/cpu.c:21:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/uc_priv.h:11:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/qemu.h:12:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/sysemu/cpus.h:4:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/timer.h:4:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/bitops.h:16:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/host-utils.h:29:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/bswap.h:4:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:2:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[69/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/target/i386/fpu_helper.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/fpu_helper.c:20:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[70/100] Building C object CMakeFiles/unicorn.dir/uc.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/uc.c:17:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/uc_priv.h:11:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/qemu.h:12:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/sysemu/cpus.h:4:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/timer.h:4:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/bitops.h:16:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/host-utils.h:29:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/bswap.h:4:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:2:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[71/100] Building C object CMakeFiles/unicorn_static.dir/qemu/softmmu/vl.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/softmmu/vl.c:26:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/sysemu/cpus.h:4:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/timer.h:4:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/bitops.h:16:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/host-utils.h:29:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/bswap.h:4:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[72/100] Building C object CMakeFiles/unicorn_static.dir/qemu/hw/core/cpu.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/hw/core/cpu.c:21:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/uc_priv.h:11:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/qemu.h:12:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/sysemu/cpus.h:4:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/timer.h:4:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/bitops.h:16:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/host-utils.h:29:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/bswap.h:4:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[73/100] Building C object CMakeFiles/sample_x86_32_gdt_and_seg_regs.dir/samples/sample_x86_32_gdt_and_seg_regs.c.o
+[74/100] Building C object CMakeFiles/sample_x86.dir/samples/sample_x86.c.o
+[75/100] Building C object CMakeFiles/sample_batch_reg.dir/samples/sample_batch_reg.c.o
+[76/100] Building C object CMakeFiles/unicorn_static.dir/uc.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/uc.c:17:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/uc_priv.h:11:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/include/qemu.h:12:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/sysemu/cpus.h:4:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/timer.h:4:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/bitops.h:16:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/host-utils.h:29:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/bswap.h:4:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[77/100] Building C object CMakeFiles/mem_apis.dir/samples/mem_apis.c.o
+[78/100] Building C object CMakeFiles/shellcode.dir/samples/shellcode.c.o
+[79/100] Building C object CMakeFiles/sample_mmu.dir/samples/sample_mmu.c.o
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/samples/sample_mmu.c:29:39: warning: format specifies type 'unsigned long' but the argument has type 'uint64_t' (aka 'unsigned long long') [-Wformat]
+    printf("write at 0x%lx: 0x%lx\n", address, value);
+                       ~~~            ^~~~~~~
+                       %llx
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/samples/sample_mmu.c:29:48: warning: format specifies type 'unsigned long' but the argument has type 'int64_t' (aka 'long long') [-Wformat]
+    printf("write at 0x%lx: 0x%lx\n", address, value);
+                              ~~~              ^~~~~
+                              %llx
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/samples/sample_mmu.c:283:39: warning: format specifies type 'unsigned long' but the argument has type 'uint64_t' (aka 'unsigned long long') [-Wformat]
+    printf("parrent result == %lu\n", parrent);
+                              ~~~     ^~~~~~~
+                              %llu
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/samples/sample_mmu.c:284:37: warning: format specifies type 'unsigned long' but the argument has type 'uint64_t' (aka 'unsigned long long') [-Wformat]
+    printf("child result == %lu\n", child);
+                            ~~~     ^~~~~
+                            %llu
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/samples/sample_mmu.c:292:47: warning: format specifies type 'unsigned long' but the argument has type 'uint64_t' (aka 'unsigned long long') [-Wformat]
+    printf("tlb lookup for address: 0x%lX\n", addr);
+                                      ~~~     ^~~~
+                                      %llX
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/samples/sample_mmu.c:434:39: warning: format specifies type 'unsigned long' but the argument has type 'uint64_t' (aka 'unsigned long long') [-Wformat]
+    printf("parrent result == %lu\n", parrent);
+                              ~~~     ^~~~~~~
+                              %llu
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/samples/sample_mmu.c:435:37: warning: format specifies type 'unsigned long' but the argument has type 'uint64_t' (aka 'unsigned long long') [-Wformat]
+    printf("child result == %lu\n", child);
+                            ~~~     ^~~~~
+                            %llu
+7 warnings generated.
+[80/100] Building C object CMakeFiles/sample_ctl.dir/samples/sample_ctl.c.o
+[81/100] Building C object CMakeFiles/test_ctl.dir/tests/unit/test_ctl.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/tests/unit/test_ctl.c:1:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/tests/unit/unicorn_test.h:7:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/tests/unit/acutest.h:1708:9: warning: variable 'junk' set but not used [-Wunused-but-set-variable]
+    int junk;
+        ^
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/tests/unit/test_ctl.c:1:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/tests/unit/unicorn_test.h:8:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:2:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+2 warnings generated.
+[82/100] Building C object CMakeFiles/test_mem.dir/tests/unit/test_mem.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/tests/unit/test_mem.c:1:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/tests/unit/unicorn_test.h:7:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/tests/unit/acutest.h:1708:9: warning: variable 'junk' set but not used [-Wunused-but-set-variable]
+    int junk;
+        ^
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/tests/unit/test_mem.c:1:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/tests/unit/unicorn_test.h:8:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:2:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+2 warnings generated.
+[83/100] Building C object CMakeFiles/test_x86.dir/tests/unit/test_x86.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/tests/unit/test_x86.c:1:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/tests/unit/unicorn_test.h:7:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/tests/unit/acutest.h:1708:9: warning: variable 'junk' set but not used [-Wunused-but-set-variable]
+    int junk;
+        ^
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/tests/unit/test_x86.c:1:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/tests/unit/unicorn_test.h:8:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:2:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+2 warnings generated.
+[84/100] Linking C static library libunicorn-common.a
+[85/100] Building C object CMakeFiles/x86_64-softmmu.dir/qemu/target/i386/translate.c.o
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/target/i386/translate.c:19:
+In file included from /Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/qemu/include/qemu/osdep.h:30:
+/Users/runner/work/bestspeechiOS/bestspeechiOS/third_party/unicorn/build-ios/config-host.h:23:9: warning: 'HAVE_PTHREAD_JIT_PROTECT' macro redefined [-Wmacro-redefined]
+#define HAVE_PTHREAD_JIT_PROTECT 1
+        ^
+<command line>:1:9: note: previous definition is here
+#define HAVE_PTHREAD_JIT_PROTECT 0
+        ^
+1 warning generated.
+[86/100] Linking C static library libx86_64-softmmu.a
+[87/100] Linking C static library libunicorn_static.a
+[88/100] Linking C shared library libunicorn.2.dylib
+ld: warning: ignoring duplicate libraries: '-lm', 'libunicorn-common.a'
+[89/100] Creating library symlink libunicorn.dylib
+[90/100] Linking C executable sample_x86.app/sample_x86
+[91/100] Linking C executable sample_x86_32_gdt_and_seg_regs.app/sample_x86_32_gdt_and_seg_regs
+[92/100] Linking C executable sample_batch_reg.app/sample_batch_reg
+[93/100] Linking C static library libunicorn.a
+[94/100] Linking C executable mem_apis.app/mem_apis
+[95/100] Linking C executable shellcode.app/shellcode
+[96/100] Linking C executable sample_ctl.app/sample_ctl
+[97/100] Linking C executable sample_mmu.app/sample_mmu
+[98/100] Linking C executable test_mem.app/test_mem
+[99/100] Linking C executable test_x86.app/test_x86
+[100/100] Linking C executable test_ctl.app/test_ctl

@@ -1,1 +1,4 @@
-No app log
+Sources/BestSpeechKit/BestSpeechSynthesizer.swift:2:8: error: no such module 'CBestSpeech'
+import CBestSpeech
+       ^
+error: fatalError
