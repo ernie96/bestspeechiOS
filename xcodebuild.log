@@ -9,7 +9,7 @@ Build settings from command line:
     CODE_SIGNING_ALLOWED = NO
     CODE_SIGNING_REQUIRED = NO
 
-2026-08-02 05:41:34.010 xcodebuild[4169:14495] Writing error result bundle to /var/folders/g3/pffjr_y96bq06blnkf72x_hw0000gn/T/ResultBundle_2026-02-08_05-41-0034.xcresult
+2026-08-02 05:42:27.964 xcodebuild[5022:16906] Writing error result bundle to /var/folders/g3/pffjr_y96bq06blnkf72x_hw0000gn/T/ResultBundle_2026-02-08_05-42-0027.xcresult
 xcodebuild: error: Unable to read project 'BestSpeech.xcodeproj'.
 	Reason: The project ‘BestSpeech’ cannot be opened because it is in a future Xcode project file format (77). Adjust the project format using a compatible version of Xcode to allow it to be opened by this version of Xcode.
 
