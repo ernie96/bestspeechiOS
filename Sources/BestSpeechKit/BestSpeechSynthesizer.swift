@@ -1,7 +1,7 @@
 import Foundation
-import CSampleTTS
+import CBestSpeech
 
-public class SampleTTSEngine {
+public class BestSpeechSynthesizer {
     private var engine: UnsafeMutableRawPointer?
 
     public init?(dllPath: URL) {
@@ -11,7 +11,7 @@ public class SampleTTSEngine {
         
         engine = data.withUnsafeBytes { ptr in
             if let baseAddress = ptr.baseAddress {
-                return CSampleTTS_init(baseAddress, data.count)
+                return CBestSpeech_init(baseAddress, data.count)
             }
             return nil
         }
@@ -21,30 +21,30 @@ public class SampleTTSEngine {
     
     deinit {
         if let engine = engine {
-            CSampleTTS_destroy(engine)
+            CBestSpeech_destroy(engine)
         }
     }
     
     public func setRate(_ rate: Int32) {
-        CSampleTTS_set_rate(engine, rate)
+        CBestSpeech_set_rate(engine, rate)
     }
     
     public func setPitch(_ percent: Int32) {
-        CSampleTTS_set_pitch(engine, percent)
+        CBestSpeech_set_pitch(engine, percent)
     }
     
     public func setVoice(inflection: Int32, headSize: Int32, excitation: Int32, unvoiced: Int32) {
-        CSampleTTS_set_voice(engine, inflection, headSize, excitation, unvoiced)
+        CBestSpeech_set_voice(engine, inflection, headSize, excitation, unvoiced)
     }
     
     public func setSpeed(_ speed: Float) {
-        CSampleTTS_set_speed(engine, speed)
+        CBestSpeech_set_speed(engine, speed)
     }
     
     public func speak(text: String) -> [Float]? {
         var outBytes: Int = 0
         return text.withCString { cStr -> [Float]? in
-            guard let pcm = CSampleTTS_speak(engine, cStr, &outBytes) else { return nil }
+            guard let pcm = CBestSpeech_speak(engine, cStr, &outBytes) else { return nil }
             
             // Convert Int16 PCM (11025 Hz) to Float32 for VoiceOver
             let numSamples = outBytes / 2

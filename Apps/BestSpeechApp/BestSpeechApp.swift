@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct SampleTTSApp: App {
+struct BestSpeechApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

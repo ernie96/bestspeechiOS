@@ -1,7 +1,7 @@
 import Foundation
 import AVFoundation
 import CoreAudioKit
-import SampleTTSKit
+import BestSpeechKit
 
 @objc(SpeechSynthesizerFactory)
 public class SpeechSynthesizerFactory: NSObject, AUAudioUnitFactory {
@@ -13,7 +13,7 @@ public class SpeechSynthesizerFactory: NSObject, AUAudioUnitFactory {
 }
 
 public class SpeechSynthesizer: AVSpeechSynthesisProviderAudioUnit {
-    private var ttsEngine: SampleTTSEngine?
+    private var ttsEngine: BestSpeechSynthesizer?
     private var outputBus: AUAudioUnitBus!
     private var outputBusArray: AUAudioUnitBusArray!
     
@@ -35,7 +35,7 @@ public class SpeechSynthesizer: AVSpeechSynthesisProviderAudioUnit {
         // Load DLL from shared container
         if let appGroupURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.bestspeech") {
             let dllURL = appGroupURL.appendingPathComponent("B32_TTS.DLL")
-            ttsEngine = SampleTTSEngine(dllPath: dllURL)
+            ttsEngine = BestSpeechSynthesizer(dllPath: dllURL)
             // Configure defaults
             ttsEngine?.setSpeed(1.0)
             ttsEngine?.setPitch(100)

@@ -1,84 +1,141 @@
-name: Build iOS IPA
+name: Build BestSpeech iOS IPA
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
   build:
-    runs-on: macos-latest
+    name: Build iOS App & Extension (.ipa)
+    runs-on: macos-14
     permissions:
       contents: write
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
           submodules: recursive
 
-      - name: Install dependencies
+      - name: Build Unicorn Engine
         run: |
-          brew install xcodegen cmake ninja
-
-      - name: Download iOS CMake Toolchain
-        run: curl -O https://raw.githubusercontent.com/leetal/ios-cmake/master/ios.toolchain.cmake
-
-      - name: Build unicorn for iOS
-        run: |
-          # Undefine the macro that enables macOS JIT code paths in QEMU
-          echo "#undef HAVE_PTHREAD_JIT_PROTECT" >> third_party/unicorn/qemu/include/qemu/osdep.h
+          # Patch pthread_jit_write_protect_np for iOS 16 SDK compatibility
+          sed -i '' 's/#elif defined(__APPLE__) && __has_builtin(__builtin_available) && __builtin_available(macOS 11.2, iOS 14.2, *)/#elif defined(__APPLE__) && __has_builtin(__builtin_available) && __builtin_available(macOS 11.2, iOS 14.2, *) \&\& !defined(HAVE_PTHREAD_JIT_PROTECT)/g' third_party/unicorn/qemu/include/qemu/osdep.h
           
           mkdir -p third_party/unicorn/build-ios
           cd third_party/unicorn/build-ios
-          cmake .. -G Ninja -DCMAKE_TOOLCHAIN_FILE=../../ios.toolchain.cmake -DPLATFORM=OS64 -DBUILD_SHARED_LIBS=OFF -DUNICORN_BUILD_TESTS=OFF > unicorn_build.log 2>&1
           
-          cmake --build . --config Release >> unicorn_build.log 2>&1 || (cat unicorn_build.log && exit 1)
+          SDK_PATH=$(xcrun --sdk iphoneos --show-sdk-path)
+          
+          cmake .. -G Ninja \
+            -DCMAKE_SYSTEM_NAME=iOS \
+            -DCMAKE_OSX_SYSROOT="$SDK_PATH" \
+            -DCMAKE_OSX_ARCHITECTURES="arm64" \
+            -DCMAKE_C_FLAGS="-DHAVE_PTHREAD_JIT_PROTECT=0 -Wno-error" \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DUNICORN_ARCH=x86
+            
+          ninja > unicorn_build.log 2>&1 || (cat unicorn_build.log && exit 1)
+
+      - name: Compile BestSpeech C Backend
+        run: |
+          SDK_PATH=$(xcrun --sdk iphoneos --show-sdk-path)
+          echo "Using iOS SDK at: $SDK_PATH"
+          {
+            xcrun -sdk iphoneos clang -target arm64-apple-ios16.0 -isysroot "$SDK_PATH" -c -O3 \
+              -I Sources/CBestSpeech/include \
+              -I third_party/unicorn/include \
+              Sources/CBestSpeech/CBestSpeech.c -o CBestSpeech.o
+          } > c_build.log 2>&1 || (cat c_build.log && exit 1)
+
+      - name: Compile BestSpeech App Binary
+        run: |
+          SDK_PATH=$(xcrun --sdk iphoneos --show-sdk-path)
+          xcrun -sdk iphoneos swiftc \
+            -target arm64-apple-ios16.0 \
+            -sdk "$SDK_PATH" \
+            -O \
+            -parse-as-library \
+            -module-name BestSpeechApp \
+            -framework SwiftUI \
+            -framework AVFoundation \
+            -framework Foundation \
+            -I Sources/CBestSpeech/include \
+            -Xcc -ISources/CBestSpeech/include \
+            -import-objc-header Apps/BestSpeechApp/BestSpeechApp-Bridging-Header.h \
+            CBestSpeech.o third_party/unicorn/build-ios/libunicorn.a \
+            Sources/BestSpeechKit/BestSpeechSynthesizer.swift \
+            Apps/BestSpeechApp/BestSpeechApp.swift \
+            Apps/BestSpeechApp/ContentView.swift \
+            -o BestSpeechAppExec > swiftc_app_build.log 2>&1 || (cat swiftc_app_build.log && exit 1)
+
+      - name: Compile BestSpeech Voice Extension Binary
+        run: |
+          SDK_PATH=$(xcrun --sdk iphoneos --show-sdk-path)
+          xcrun -sdk iphoneos swiftc \
+            -target arm64-apple-ios16.0 \
+            -sdk "$SDK_PATH" \
+            -O \
+            -parse-as-library \
+            -module-name BestSpeechVoiceExtension \
+            -framework AVFoundation \
+            -framework CoreMedia \
+            -framework Accelerate \
+            -framework Foundation \
+            -framework AudioToolbox \
+            -framework CoreAudio \
+            -I Sources/CBestSpeech/include \
+            -Xcc -ISources/CBestSpeech/include \
+            -import-objc-header Apps/BestSpeechVoiceExtension/BestSpeechVoiceExtension-Bridging-Header.h \
+            CBestSpeech.o third_party/unicorn/build-ios/libunicorn.a \
+            Sources/BestSpeechKit/BestSpeechSynthesizer.swift \
+            Apps/BestSpeechVoiceExtension/BestSpeechAudioUnit.swift \
+            -o BestSpeechVoiceExtensionExec > swiftc_ext_build.log 2>&1 || (cat swiftc_ext_build.log && exit 1)
+
+      - name: Package Payload and Create IPA
+        run: |
+          mkdir -p Payload/BestSpeechApp.app/PlugIns/BestSpeechVoiceExtension.appex
+
+          # Assemble Main App bundle
+          cp BestSpeechAppExec Payload/BestSpeechApp.app/BestSpeechApp
+          chmod +x Payload/BestSpeechApp.app/BestSpeechApp
+          cp Apps/BestSpeechApp/Info.plist Payload/BestSpeechApp.app/Info.plist
+          printf "APPL????" > Payload/BestSpeechApp.app/PkgInfo
+
+          # Assemble Voice Extension bundle
+          cp BestSpeechVoiceExtensionExec Payload/BestSpeechApp.app/PlugIns/BestSpeechVoiceExtension.appex/BestSpeechVoiceExtension
+          chmod +x Payload/BestSpeechApp.app/PlugIns/BestSpeechVoiceExtension.appex/BestSpeechVoiceExtension
+          cp Apps/BestSpeechVoiceExtension/Info.plist Payload/BestSpeechApp.app/PlugIns/BestSpeechVoiceExtension.appex/Info.plist
+
+          # Ad-hoc sign both binaries
+          codesign -s - --force Payload/BestSpeechApp.app/PlugIns/BestSpeechVoiceExtension.appex
+          codesign -s - --force Payload/BestSpeechApp.app
+
+          # Zip into .ipa
+          rm -f BestSpeechApp.ipa
+          zip -r BestSpeechApp.ipa Payload
+          echo "IPA created successfully: BestSpeechApp.ipa ($(wc -c < BestSpeechApp.ipa) bytes)"
 
       - name: Upload Logs on Failure
         if: failure()
         run: |
-          cp third_party/unicorn/build-ios/unicorn_build.log unicorn_error.txt || echo "No unicorn log found" > unicorn_error.txt
-          cp ../xcodegen.log xcodegen_error.txt || echo "No xcodegen log found" > xcodegen_error.txt
-          cp ../xcodebuild.log xcodebuild_error.txt || echo "No xcodebuild log found" > xcodebuild_error.txt
+          cp third_party/unicorn/build-ios/unicorn_build.log unicorn_error.txt || echo "No unicorn log" > unicorn_error.txt
+          cp c_build.log c_error.txt || echo "No c_build log" > c_error.txt
+          cp swiftc_app_build.log app_error.txt || echo "No app log" > app_error.txt
+          cp swiftc_ext_build.log ext_error.txt || echo "No ext log" > ext_error.txt
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add unicorn_error.txt xcodegen_error.txt xcodebuild_error.txt
+          git add *_error.txt
           git commit -m "CI: Failure Logs" || true
           git pull --rebase origin main || true
           git push origin HEAD:main || true
 
-      - name: Generate Xcode Project
-        run: |
-          cd ios
-          xcodegen > ../xcodegen.log 2>&1 || (cat ../xcodegen.log && exit 1)
-
-      - name: Build with xcodebuild
-        run: |
-          cd ios
-          xcodebuild clean build \
-            -project BestSpeech.xcodeproj \
-            -scheme SampleTTSApp \
-            -configuration Release \
-            -sdk iphoneos \
-            -derivedDataPath build \
-            CODE_SIGNING_ALLOWED=NO \
-            CODE_SIGNING_REQUIRED=NO \
-            CODE_SIGN_IDENTITY="" > ../xcodebuild.log 2>&1 || (cat ../xcodebuild.log && exit 1)
-
-      - name: Package Payload and Create IPA
-        run: |
-          cd ios/build/Build/Products/Release-iphoneos
-          mkdir -p Payload
-          cp -R BestSpeech.app Payload/
-          
-          # CRITICAL STEP: Delete old IPA before zipping to prevent merged/corrupted archives
-          rm -f BestSpeech.ipa
-          
-          # Zip into .ipa
-          zip -r BestSpeech.ipa Payload
-          echo "IPA created successfully"
-
       - name: Upload IPA Artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: BestSpeech-iOS-IPA
-          path: ios/build/Build/Products/Release-iphoneos/BestSpeech.ipa
+          path: BestSpeechApp.ipa
