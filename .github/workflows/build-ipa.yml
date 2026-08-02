@@ -23,7 +23,9 @@ jobs:
       - name: Build Unicorn Engine
         run: |
           # Patch pthread_jit_write_protect_np for iOS 16 SDK compatibility
-          sed -i '' 's/#elif defined(__APPLE__) && __has_builtin(__builtin_available) && __builtin_available(macOS 11.2, iOS 14.2, *)/#elif defined(__APPLE__) && __has_builtin(__builtin_available) && __builtin_available(macOS 11.2, iOS 14.2, *) \&\& !defined(HAVE_PTHREAD_JIT_PROTECT)/g' third_party/unicorn/qemu/include/qemu/osdep.h
+          sed -i '' 's/#elif defined(__APPLE__) && __has_builtin(__builtin_available) && __builtin_available(macOS 11.2, iOS 14.2, *)/#elif 0/g' third_party/unicorn/qemu/include/qemu/osdep.h
+          find third_party/unicorn -type f \( -name "*.c" -o -name "*.h" \) -exec sed -i '' 's/defined(HAVE_PTHREAD_JIT_PROTECT)/0/g' {} +
+          find third_party/unicorn -type f \( -name "*.c" -o -name "*.h" \) -exec sed -i '' 's/#ifdef HAVE_PTHREAD_JIT_PROTECT/#if 0/g' {} +
           
           mkdir -p third_party/unicorn/build-ios
           cd third_party/unicorn/build-ios
