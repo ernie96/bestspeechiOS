@@ -21,7 +21,7 @@ targets:
     platform: iOS
     sources:
       - Apps/BestSpeechVoiceExtension
-      - Sources/CBestSpeech
+      - path: Sources/CBestSpeech/CBestSpeech.c
       - Sources/BestSpeechKit
     settings:
       base:
@@ -46,7 +46,7 @@ targets:
     platform: iOS
     sources:
       - Apps/BestSpeechApp
-      - Sources/CBestSpeech
+      - path: Sources/CBestSpeech/CBestSpeech.c
       - Sources/BestSpeechKit
     settings:
       base:
