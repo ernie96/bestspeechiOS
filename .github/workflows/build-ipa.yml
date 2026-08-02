@@ -56,7 +56,17 @@ jobs:
             -archivePath BestSpeechApp.xcarchive \
             -destination "generic/platform=iOS" \
             CODE_SIGNING_ALLOWED=NO \
-            CODE_SIGNING_REQUIRED=NO
+            CODE_SIGNING_REQUIRED=NO > xcodebuild.log 2>&1 || (cat xcodebuild.log && exit 1)
+            
+      - name: Upload Logs on Failure
+        if: failure()
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add xcodebuild.log || true
+          git commit -m "CI: Xcodebuild Failure Logs" || true
+          git pull --rebase origin main || true
+          git push origin HEAD:main || true
             
       - name: Package Payload and Create IPA
         run: |
