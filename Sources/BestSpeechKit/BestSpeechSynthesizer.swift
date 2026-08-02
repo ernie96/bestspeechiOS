@@ -1,5 +1,4 @@
 import Foundation
-import CBestSpeech
 
 public class BestSpeechSynthesizer {
     private var engine: UnsafeMutableRawPointer?
