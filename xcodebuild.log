@@ -1,0 +1,16 @@
+Command line invocation:
+    /Applications/Xcode_15.4.app/Contents/Developer/usr/bin/xcodebuild archive -project BestSpeech.xcodeproj -scheme BestSpeechApp -configuration Release -archivePath BestSpeechApp.xcarchive -destination generic/platform=iOS CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
+
+User defaults from command line:
+    IDEArchivePathOverride = /Users/runner/work/bestspeechiOS/bestspeechiOS/BestSpeechApp.xcarchive
+    IDEPackageSupportUseBuiltinSCM = YES
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+    CODE_SIGNING_REQUIRED = NO
+
+2026-08-02 05:41:34.010 xcodebuild[4169:14495] Writing error result bundle to /var/folders/g3/pffjr_y96bq06blnkf72x_hw0000gn/T/ResultBundle_2026-02-08_05-41-0034.xcresult
+xcodebuild: error: Unable to read project 'BestSpeech.xcodeproj'.
+	Reason: The project ‘BestSpeech’ cannot be opened because it is in a future Xcode project file format (77). Adjust the project format using a compatible version of Xcode to allow it to be opened by this version of Xcode.
+
+
