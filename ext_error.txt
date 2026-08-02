@@ -1,4 +1,23 @@
-Apps/BestSpeechVoiceExtension/BestSpeechAudioUnit.swift:4:8: error: no such module 'BestSpeechKit'
-import BestSpeechKit
-       ^
+Apps/BestSpeechVoiceExtension/BestSpeechAudioUnit.swift:46:25: error: cannot override mutable property with read-only property 'speechVoices'
+    public override var speechVoices: [AVSpeechSynthesisProviderVoice] {
+                        ^
+AVFAudio.AVSpeechSynthesisProviderAudioUnit:3:14: note: attempt to override property here
+    open var speechVoices: [AVSpeechSynthesisProviderVoice] { get set }
+             ^
+Apps/BestSpeechVoiceExtension/BestSpeechAudioUnit.swift:88:27: warning: initialization of 'UnsafeBufferPointer<AudioBuffer>' results in a dangling buffer pointer
+            let buffers = UnsafeBufferPointer<AudioBuffer>(start: &bufferList.mBuffers, count: Int(bufferList.mNumberBuffers))
+                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Apps/BestSpeechVoiceExtension/BestSpeechAudioUnit.swift:88:67: note: implicit argument conversion from 'AudioBuffer' to 'UnsafePointer<AudioBuffer>?' produces a pointer valid only for the duration of the call to 'init(start:count:)'
+            let buffers = UnsafeBufferPointer<AudioBuffer>(start: &bufferList.mBuffers, count: Int(bufferList.mNumberBuffers))
+                                                                  ^~~~~~~~~~~~~~~~~~~~
+Apps/BestSpeechVoiceExtension/BestSpeechAudioUnit.swift:88:67: note: use 'withUnsafePointer' in order to explicitly convert argument to pointer valid for a defined scope
+            let buffers = UnsafeBufferPointer<AudioBuffer>(start: &bufferList.mBuffers, count: Int(bufferList.mNumberBuffers))
+                                                                  ^
+Apps/BestSpeechVoiceExtension/BestSpeechAudioUnit.swift:88:67: error: cannot pass immutable value as inout argument: 'bufferList' is a 'let' constant
+            let buffers = UnsafeBufferPointer<AudioBuffer>(start: &bufferList.mBuffers, count: Int(bufferList.mNumberBuffers))
+                                                                  ^~~~~~~~~~~
+Apps/BestSpeechVoiceExtension/BestSpeechAudioUnit.swift:87:13: note: change 'let' to 'var' to make it mutable
+            let bufferList = outputData.pointee
+            ^~~
+            var
 error: fatalError
