@@ -95,8 +95,7 @@ public class SpeechSynthesizer: AVSpeechSynthesisProviderAudioUnit {
             let abl = UnsafeMutableAudioBufferListPointer(outputData)
             guard let ptr = abl[0].mData?.assumingMemoryBound(to: Float32.self) else { return noErr }
             
-            var framesToCopy = Int(frameCount)
-            var framesCopied = 0
+            let framesToCopy = Int(frameCount)
             
             if self.isSynthesizing && self.bufferIndex < self.currentBuffer.count {
                 let availableFrames = self.currentBuffer.count - self.bufferIndex
@@ -107,7 +106,6 @@ public class SpeechSynthesizer: AVSpeechSynthesisProviderAudioUnit {
                 }
                 
                 self.bufferIndex += framesToWrite
-                framesCopied = framesToWrite
                 
                 if self.bufferIndex >= self.currentBuffer.count {
                     self.isSynthesizing = false

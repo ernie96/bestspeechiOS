@@ -67,6 +67,7 @@ jobs:
             -framework Foundation \
             -I Sources/CBestSpeech/include \
             -Xcc -ISources/CBestSpeech/include \
+            -Xlinker -lc++ \
             -import-objc-header Apps/BestSpeechApp/BestSpeechApp-Bridging-Header.h \
             CBestSpeech.o third_party/unicorn/build-ios/libunicorn.a \
             Sources/BestSpeechKit/BestSpeechSynthesizer.swift \
@@ -91,6 +92,7 @@ jobs:
             -framework CoreAudio \
             -I Sources/CBestSpeech/include \
             -Xcc -ISources/CBestSpeech/include \
+            -Xlinker -lc++ \
             -import-objc-header Apps/BestSpeechVoiceExtension/BestSpeechVoiceExtension-Bridging-Header.h \
             CBestSpeech.o third_party/unicorn/build-ios/libunicorn.a \
             Sources/BestSpeechKit/BestSpeechSynthesizer.swift \
