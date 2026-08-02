@@ -44,9 +44,12 @@ public class SpeechSynthesizer: AVSpeechSynthesisProviderAudioUnit {
     }
     
     public override var speechVoices: [AVSpeechSynthesisProviderVoice] {
-        return [
-            AVSpeechSynthesisProviderVoice(name: "BestSpeech Default", identifier: "com.bestspeech.voice.default", primaryLanguages: ["en-US"], supportedLanguages: ["en-US"])
-        ]
+        get {
+            return [
+                AVSpeechSynthesisProviderVoice(name: "BestSpeech Default", identifier: "com.bestspeech.voice.default", primaryLanguages: ["en-US"], supportedLanguages: ["en-US"])
+            ]
+        }
+        set {}
     }
     
     public override func synthesizeSpeechRequest(_ request: AVSpeechSynthesisProviderRequest) {
@@ -84,10 +87,8 @@ public class SpeechSynthesizer: AVSpeechSynthesisProviderAudioUnit {
         return { [weak self] actionFlags, timestamp, frameCount, outputBusNumber, outputData, renderEvent, pullInputBlock in
             guard let self = self else { return noErr }
             
-            let bufferList = outputData.pointee
-            let buffers = UnsafeBufferPointer<AudioBuffer>(start: &bufferList.mBuffers, count: Int(bufferList.mNumberBuffers))
-            
-            guard let ptr = buffers[0].mData?.assumingMemoryBound(to: Float32.self) else { return noErr }
+            let abl = UnsafeMutableAudioBufferListPointer(outputData)
+            guard let ptr = abl[0].mData?.assumingMemoryBound(to: Float32.self) else { return noErr }
             
             var framesToCopy = Int(frameCount)
             var framesCopied = 0
