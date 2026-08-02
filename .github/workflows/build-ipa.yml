@@ -28,6 +28,7 @@ jobs:
           sed -i '' 's/#elif defined(__APPLE__) && __has_builtin(__builtin_available) && __builtin_available(macOS 11.2, iOS 14.2, *)/#elif 0/g' third_party/unicorn/qemu/include/qemu/osdep.h
           find third_party/unicorn -type f \( -name "*.c" -o -name "*.h" \) -exec sed -i '' 's/defined(HAVE_PTHREAD_JIT_PROTECT)/0/g' {} +
           find third_party/unicorn -type f \( -name "*.c" -o -name "*.h" \) -exec sed -i '' 's/#ifdef HAVE_PTHREAD_JIT_PROTECT/#if 0/g' {} +
+          sed -i '' 's/abort();/return NULL;/g' third_party/unicorn/qemu/accel/tcg/translate-all.c
           
           mkdir -p third_party/unicorn/build-ios
           cd third_party/unicorn/build-ios
@@ -79,9 +80,9 @@ jobs:
           if [ -f b32_tts.dll ]; then cp b32_tts.dll Payload/BestSpeechApp.app/PlugIns/BestSpeechVoiceExtension.appex/; fi
           if [ -f B32_TTS.DLL ]; then cp B32_TTS.DLL Payload/BestSpeechApp.app/PlugIns/BestSpeechVoiceExtension.appex/; fi
 
-          # Ad-hoc sign both binaries with entitlements
+          # Ad-hoc sign both binaries
           codesign -s - --force --entitlements Apps/BestSpeechVoiceExtension/BestSpeechVoiceExtension.entitlements Payload/BestSpeechApp.app/PlugIns/BestSpeechVoiceExtension.appex
-          codesign -s - --force --entitlements Apps/BestSpeechApp/BestSpeechApp.entitlements Payload/BestSpeechApp.app
+          codesign -s - --force Payload/BestSpeechApp.app
 
           # Zip into .ipa
           rm -f BestSpeechApp.ipa
